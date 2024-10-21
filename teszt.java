@@ -1,2 +1,1 @@
-f
 teszt commit2
