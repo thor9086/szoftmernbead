@@ -1,2 +1,5 @@
 teszt commit2
-fgdfsdf
+fgdfsdfg
+file
+decompiled
+static
