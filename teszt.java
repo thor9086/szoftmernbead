@@ -1,1 +1,3 @@
-teszt commit2
+class Teszt{
+    
+}
