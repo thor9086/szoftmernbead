@@ -1,5 +1,7 @@
-teszt commit2
-fgdfsdfg
-file
-decompiled
-static
+// Your First Program
+
+class teszt {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!"); 
+    }
+}
