@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Ital Ajánlás</title>
+</head>
+<body>
+<h2>Ital Ajánlás</h2>
+<form action="#" th:action="@{/recommend}" th:object="${person}" method="post">
+    <label for="osszeg">Kereted (Ft):</label>
+    <input type="number" id="osszeg" th:field="*{osszeg}" required><br>
+
+    <label for="mertek">Mérték (1=kicsit, 2=közepesen, 3=nagyon):</label>
+    <input type="number" id="mertek" th:field="*{mertek}" required><br>
+
+    <label for="suly">Súly (kg):</label>
+    <input type="number" id="suly" th:field="*{suly}" required><br>
+
+    <label for="nem">Nem (1=férfi, 2=nő):</label>
+    <input type="number" id="nem" th:field="*{nem}" required><br>
+
+    <button type="submit">Ajánlás</button>
+</form>
+</body>
+</html>
