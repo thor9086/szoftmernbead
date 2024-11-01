@@ -1,0 +1,35 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class ItallapDatabase {
+
+    private static final String URL = "jdbc:sqlite:itallap.db";
+
+    public static void main(String[] args) {
+        try (Connection conn = DriverManager.getConnection(URL)) {
+            if (conn != null) {
+                System.out.println("Kapcsolódás az SQLite adatbázishoz sikeres!");
+                
+                String sql = "SELECT nev, ar, alkoholszazalek, meret FROM Italok";
+                
+                try (PreparedStatement pstmt = conn.prepareStatement(sql);
+                     ResultSet rs = pstmt.executeQuery()) {
+
+                    while (rs.next()) {
+                        String nev = rs.getString("nev");
+                        int ar = rs.getInt("ar");
+                        double alkoholszazalek = rs.getDouble("alkoholszazalek");
+                        boolean meret = rs.getBoolean("meret");
+
+                        System.out.println("Név: " + nev + ", Ár: " + ar + " Ft, Alkohol: " + alkoholszazalek + "%, Méret: " + (meret ? "Nagy" : "Kicsi"));
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
