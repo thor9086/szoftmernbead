@@ -37,6 +37,16 @@ public class RecommendationController {
 
     @PostMapping
     public String getRecommendations(@ModelAttribute Person person, Model model) {
+        if (person.getOsszeg() > 100000) {
+            model.addAttribute("errorMessage", "Túl nagy a keret");
+            return "recommendForm";
+        } else if (person.getOsszeg() < 1000) {
+            model.addAttribute("errorMessage", "Túl kevés a keret");
+            return "recommendForm";
+        } else if (person.getSuly() > 200 || person.getSuly() < 40) {
+            model.addAttribute("errorMessage", "Érvénytelen adat");
+            return "recommendForm";
+        }
         List<Italok> recommendedDrinks = recommendationService.getRecommendations(person, createSampleDrinks());
         model.addAttribute("recommendedDrinks", recommendedDrinks);
         return "recommendResult";

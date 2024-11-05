@@ -5,6 +5,9 @@
 </head>
 <body>
 <h2>Ital Ajánlás</h2>
+<div th:if="${errorMessage}">
+    <p style="color:red;" th:text="${errorMessage}"></p>
+</div>
 <form action="#" th:action="@{/recommend}" th:object="${person}" method="post">
     <label for="osszeg">Kereted (Ft):</label>
     <input type="number" id="osszeg" th:field="*{osszeg}" required><br>
