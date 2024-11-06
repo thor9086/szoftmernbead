@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ibolyApp</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <img src="IbolyAppLogo.png" alt="ibolyApp Logo" />
+      <a href="register.html"><button>Regisztráció</button></a>
+    </header>
+    <form>
+      <input id="amount" type="number" min="1500" max="50000" placeholder="Add meg az összeget forintban amit elköltenél!" />
+      <input id="weight" type="number" min="40" max="180" placeholder="Add meg a súlyod kilogrammban!" />
+      <div class="radio-group">
+        <p>Mennyire szeretnéd jól érezni magad?</p>
+        <label for="kicsit"><input id="kicsit" type="radio" name="feel_good" value="1" /> Kicsit</label>
+        <label for="kozepesen"><input id="kozepesen" type="radio" name="feel_good" value="2" /> Közepesen</label>
+        <label for="nagyon"><input id="nagyon" type="radio" name="feel_good" value="3" /> Nagyon</label
+        >
+      </div>
+      <div class="radio-group">
+        <p>Add meg a nemed</p>
+        <label for="female"><input id="female" type="radio" name="gender" value="2" /> Nő</label>
+        <label for="male"><input id="male" type="radio" name="gender" value="1" /> Férfi</label>
+      </div>
+      <button type="submit">Ajánlás</button>
+    </form>
+    <script src="assets/js/scripts.js"></script>
+  </body>
+</html>
