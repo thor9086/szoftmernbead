@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Recommended Drinks</title>
+</head>
+<body>
+<h1>Recommended Drinks</h1>
+
+<p>Based on your preferences, here are the drink recommendations:</p>
+
+<ul>
+    <li th:each="drink : ${recommendedDrinks}">
+        <span th:text="${drink.name}"></span> -
+        <span th:text="${drink.price}">Price</span> HUF -
+        <span th:text="${drink.alcoholContent}">Alcohol Content</span>%
+    </li>
+</ul>
+
+<p>Total required alcohol: <span th:text="${requiredAlcohol}">0</span> grams</p>
+
+<!-- Back button -->
+<form action="/recommend/recommendForm" method="get">
+    <button type="submit">Back</button>
+</form>
+
+
+</body>
+</html>
