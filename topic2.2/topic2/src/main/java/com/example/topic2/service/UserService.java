@@ -2,6 +2,7 @@ package com.example.topic2.service;
 
 import com.example.topic2.model.User;
 import com.example.topic2.repository.UserRepository;
+import com.example.topic2.utils.UserUtils;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -17,6 +18,18 @@ public class UserService implements UserDetailsService{
     @Autowired
     private UserRepository userRepository;
 
+    public static String getCurrentUser() {
+        String email = UserUtils.getCurrentUserEmail();
+        if (email != null) {
+            return email;
+        } else {
+            return "No user is logged in.";
+        }
+    }
+
+
+
+
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Optional<User> user = userRepository.findByEmail(email);
@@ -31,24 +44,4 @@ public class UserService implements UserDetailsService{
         }
     }
 }
-
-//package com.example.topic2.service;
-
-//import com.example.topic2.model.User;
-//import com.example.topic2.repository.UserRepository;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.stereotype.Service;
-//
-//@Service
-//public class UserService {
-//
-//    @Autowired
-//    private UserRepository userRepository;
-//
-//    public boolean authenticate(String email, String password) {
-//        return userRepository.findByEmail(email)
-//                .filter(user -> user.getPassword().equals(password)) // Ellenőrizd a jelszót
-//                .isPresent(); // Ha az email létezik és a jelszó egyezik, akkor true-t ad vissza
-//    }
-//}
 

@@ -5,6 +5,7 @@ import com.example.topic2.repository.DrinkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DrinkService {
@@ -18,5 +19,9 @@ public class DrinkService {
 
     public List<Drink> getShortDrinks() {
         return drinkRepository.findByIsShortDrink(true);
+    }
+
+    public Optional<Drink> getDrinkId(Long id) {
+        return drinkRepository.findById(id);
     }
 }

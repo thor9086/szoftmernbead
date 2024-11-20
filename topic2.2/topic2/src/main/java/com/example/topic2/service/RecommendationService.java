@@ -40,11 +40,6 @@ public class RecommendationService {
             recommended = getDrinks(strongDrinks, person);
         }
 
-        // DEBUG
-        for(Drink drink : recommended){
-            System.out.println(drink.getName());
-        }
-
         return recommended;
     }
 
@@ -73,6 +68,8 @@ public class RecommendationService {
             }
         }
 
+
+        //Ezt írja ki az oldal ha nincs semmi itóka, FONTOS JAVíTANI.
         if (recommended.isEmpty()) {
             System.out.println("No drinks found for the specified criteria.");
         }

@@ -3,7 +3,6 @@ package com.example.topic2.controller;
 
 import com.example.topic2.model.Drink;
 import com.example.topic2.model.Person;
-import com.example.topic2.service.AlcoholCalculator;
 import com.example.topic2.service.DrinkService;
 import com.example.topic2.service.RecommendationService;
 import org.springframework.beans.factory.annotation.Autowired;

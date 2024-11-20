@@ -1,38 +1,25 @@
 <!DOCTYPE html>
-<html lang="hu" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
-    <title>Kedvenc Csomagok</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <title>Favorites</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('/favorites/favs')
+                .then(response => response.json())
+                .then(favorites => {
+                    const favList = document.getElementById("fav-list");
+                    favorites.forEach(fav => {
+                        const listItem = document.createElement("li");
+                        listItem.innerHTML = `${fav.drink.name}`;
+                        favList.appendChild(listItem);
+                    });
+                });
+        });
+    </script>
 </head>
 <body>
-<h1>Kedvenc Csomagok</h1>
-<div id="favorites-list">
-    <p>Betöltés folyamatban...</p>
-</div>
-<script>
-    fetch('/favorites', {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' }
-    }).then(response => response.json())
-      .then(data => {
-          const listDiv = document.getElementById('favorites-list');
-          listDiv.innerHTML = '';
-          if (data.length > 0) {
-              data.forEach(pkg => {
-                  const packageDiv = document.createElement('div');
-                  packageDiv.innerHTML = `
-                      <h3>${pkg.name}</h3>
-                      <p>${pkg.description}</p>
-                      <p>Ár: ${pkg.price} Ft</p>
-                  `;
-                  listDiv.appendChild(packageDiv);
-              });
-          } else {
-              listDiv.innerHTML = '<p>Nincsenek kedvencek elmentve.</p>';
-          }
-      }).catch(error => {
-          console.error('Hiba a kedvencek betöltésekor:', error);
-      });
-</script>
+<h1>Your Favorite Drinks</h1>
+<ul id="fav-list"></ul>
 </body>
 </html>
