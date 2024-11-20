@@ -1,27 +1,46 @@
 <!DOCTYPE html>
 <html lang="hu" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recommended Drinks</title>
+    <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
-<h1>Recommended Drinks</h1>
-
-<p>Based on your preferences, here are the drink recommendations:</p>
-
-<ul>
-    <li th:each="drink : ${recommendedDrinks}">
-        <span th:text="${drink.name}"></span> -
-        <span th:text="${drink.price}">Price</span> HUF -
-        <span th:text="${drink.alcoholContent}">Alcohol Content</span>%
-    </li>
-</ul>
-
-<p>Total required alcohol: <span th:text="${requiredAlcohol}">0</span> grams</p>
-
-<!-- Back button -->
-<form action="/recommend/recommendForm" method="get">
-    <button type="submit">Back</button>
-</form>
+<header>
+    <img src="/images/IbolyAppLogo.png" alt="ibolyApp Logo" />
+    <form action="/recommend/recommendForm" method="get">
+        <button type="submit">Back</button>
+    </form>
+</header>
+<div class="card-container">
+    <div class="card">
+        <h3>Card 1</h3>
+        <li th:each="drink : ${recommendedDrinks1}">
+            <span th:text="${drink.name}"></span> -
+            <span th:text="${drink.price}">Price</span> HUF -
+            <span th:text="${drink.alcoholContent}">Alcohol Content</span>%
+        </li>
+    </div>
+    <div class="card">
+        <h3>Card 2</h3>
+        <li th:each="drink : ${recommendedDrinks2}">
+            <span th:text="${drink.name}"></span> -
+            <span th:text="${drink.price}">Price</span> HUF -
+            <span th:text="${drink.alcoholContent}">Alcohol Content</span>%
+        </li>
+    </div>
+    <div class="card">
+        <h3>Card 3</h3>
+        <li th:each="drink : ${recommendedDrinks3}">
+            <span th:text="${drink.name}"></span> -
+            <span th:text="${drink.price}">Price</span> HUF -
+            <span th:text="${drink.alcoholContent}">Alcohol Content</span>%
+        </li>
+    </div>
+</div>
+</body>
+</html>
 
 
 </body>

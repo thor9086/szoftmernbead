@@ -51,10 +51,14 @@ public class RecommendController {
     // A POST metódus a beérkező formadatok kezelésére
     @PostMapping("/recommendResult")
     public String getRecommendations(@ModelAttribute Person person, Model model) {
-        List<Drink> recommendedDrinks = recommendationService.getRecommendations(person, createSampleDrinks());
-        System.out.println(recommendedDrinks);
-        model.addAttribute("recommendedDrinks", recommendedDrinks);
-        model.addAttribute("requiredAlcohol" , AlcoholCalculator.alcoholPersonCalc(person));
+        List<Drink> recommendedDrinks1 = recommendationService.getRecommendations(person, createSampleDrinks());
+        List<Drink> recommendedDrinks2 = recommendationService.getRecommendations(person, createSampleDrinks());
+        List<Drink> recommendedDrinks3 = recommendationService.getRecommendations(person, createSampleDrinks());
+
+        System.out.println(recommendedDrinks1);
+        model.addAttribute("recommendedDrinks1", recommendedDrinks1);
+        model.addAttribute("recommendedDrinks2", recommendedDrinks2);
+        model.addAttribute("recommendedDrinks3", recommendedDrinks3);
         return "recommendResult";
     }
 }

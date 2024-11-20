@@ -2,52 +2,15 @@
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
-        .register-container {
-            padding: 20px;
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            text-align: center;
-        }
-        label, input {
-            display: block;
-            margin: 5px 0;
-            width: 100%;
-        }
-        input[type="submit"], button {
-            margin-top: 10px;
-            padding: 10px;
-            width: 100%;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover, button:hover {
-            background-color: #0056b3;
-        }
-        .login-button {
-            background-color: #6c757d;
-        }
-        .login-button:hover {
-            background-color: #5a6268;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
-
+<header>
+    <img src="/images/IbolyAppLogo.png" alt="ibolyApp Logo" />
+    <a href="/login"><button>Bejelentkezés</button></a>
+</header>
 <div class="register-container">
     <h2>Register</h2>
     <form id="registerForm" action="/register" method="post">
@@ -60,7 +23,7 @@
         <input type="submit" value="Register">
     </form>
     <form action="/login" method="get">
-        <button type="submit">Go to login</button>
+        <button type="submit" class="login-container">Go to login</button>
     </form>
 </div>
 

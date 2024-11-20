@@ -56,7 +56,7 @@ public class SecurityConfig {
                         .permitAll()
                 )
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/register", "/css/**", "/js/**", "/h2-console/**").permitAll()
+                        .requestMatchers("/register", "/h2-console/**", "/js/**" , "/css/**" , "/images/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .headers(headers -> headers.frameOptions().sameOrigin())
