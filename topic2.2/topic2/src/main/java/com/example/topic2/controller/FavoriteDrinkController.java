@@ -7,6 +7,7 @@ import com.example.topic2.repository.FavoriteDrinkRepository;
 import com.example.topic2.repository.UserRepository;
 import com.example.topic2.service.DrinkService;
 import com.example.topic2.service.UserService;
+import com.example.topic2.utils.UserUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,6 +35,7 @@ public class FavoriteDrinkController {
     @GetMapping("/drink-list")
     public String showAllDrinks(Model model) {
         model.addAttribute("allDrinks" , drinkService.getAllDrinks());
+        model.addAttribute("user" , UserUtils.getCurrentUserEmail());
         return "drink-list";
     }
 

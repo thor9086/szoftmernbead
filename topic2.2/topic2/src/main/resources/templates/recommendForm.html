@@ -9,8 +9,12 @@
 <body>
 <header>
     <img src="/images/IbolyAppLogo.png" alt="ibolyApp Logo" />
-    <a href="register.html"><button>Regisztráció</button></a>
+    <form action="/register" method="get">
+        <button type="submit">regisztráció</button>
+    </form>
+
 </header>
+<h1>Welcome, <span th:text="${user}">User</span>!</h1>
 <form action="#" th:action="@{/recommend/recommendResult}" th:object="${person}" method="post">
     <input type="number" id="amount" th:field="*{amount}" required min="1500" max="50000" placeholder="Add meg az összeget forintban amit elköltenél!" />
     <input type="number" id="weight" th:field="*{weight}" min="40" max="180" placeholder="Add meg a súlyod kilogrammban!" />
@@ -27,6 +31,9 @@
         <label for="male"><input id="male" type="radio" name="gender" th:field="*{gender}" value="1" /> Férfi</label>
     </div>
     <button type="submit">Ajánlás</button>
+</form>
+<form action="/logout" method="post">
+    <button type="submit">Kijelentkezés</button>
 </form>
 <script src="/js/scripts.js"></script>
 </body>

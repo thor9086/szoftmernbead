@@ -1,44 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Drink List</title>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            fetch('/favorites/list')
-                .then(response => response.json())
-                .then(drinks => {
-                    const drinkList = document.getElementById("drink-list");
-                    drinks.forEach(drink => {
-                        const listItem = document.createElement("li");
-                        listItem.innerHTML = `
-                            ${drink.name}
-                            <button onclick="addToFavorites(${drink.id})">Favorite</button>
-                        `;
-                        drinkList.appendChild(listItem);
-                    });
-                });
-        });
 
-        function addToFavorites(drinkId) {
-            fetch(`/favorites/add/${drinkId}`, { method: 'POST' })
-                .then(response => {
-                    if (response.ok) {
-                        alert("Drink added to favorites!");
-                    } else {
-                        alert("Failed to add to favorites.");
-                    }
-                });
-        }
-
-        function goToFavorites() {
-            window.location.href = "/favorites/favs";
-        }
-    </script>
 </head>
 <body>
-<h1>Drink List</h1>
-<ul id="drink-list"></ul>
-<button onclick="goToFavorites()">Go to Favorites</button>
+<h1>Welcome, <span th:text="${user}">User</span>!</h1>
+<h2>Available Drinks</h2>
+<ul>
+    <!-- Iterálás az italok listáján -->
+    <li th:each="drink : ${allDrinks}" th:text="${drink.name}">Drink Name</li>
+</ul>
 </body>
 </html>

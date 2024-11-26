@@ -5,6 +5,7 @@ import com.example.topic2.model.Drink;
 import com.example.topic2.model.Person;
 import com.example.topic2.service.DrinkService;
 import com.example.topic2.service.RecommendationService;
+import com.example.topic2.utils.UserUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -44,12 +45,14 @@ public class RecommendController {
     @GetMapping("/recommendForm")
     public String showRecommendForm(Model model) {
         model.addAttribute("person", new Person());
+        model.addAttribute("user" , UserUtils.getCurrentUserEmail());
         return "recommendForm";
     }
 
     // A POST metódus a beérkező formadatok kezelésére
     @PostMapping("/recommendResult")
     public String getRecommendations(@ModelAttribute Person person, Model model) {
+        model.addAttribute("user" , UserUtils.getCurrentUserEmail());
         List<Drink> recommendedDrinks1 = recommendationService.getRecommendations(person, createSampleDrinks());
         List<Drink> recommendedDrinks2 = recommendationService.getRecommendations(person, createSampleDrinks());
         List<Drink> recommendedDrinks3 = recommendationService.getRecommendations(person, createSampleDrinks());
