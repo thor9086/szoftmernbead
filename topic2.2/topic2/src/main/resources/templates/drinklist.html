@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Itallista</title>
+</head>
+<body>
+<h1>Üdvözöllek, <span th:text="${user}">Felhasználó</span>!</h1>
+
+<h2>Elérhető italok:</h2>
+<ul>
+    <li th:each="drink : ${allDrinks}">
+        <strong th:text="${drink.name}">Ital neve</strong> -
+        Ár: <span th:text="${drink.price}">Ár</span> HUF
+        <form action="/favorites/drinklist" method="post" style="display:inline;">
+            <input type="hidden" name="drinkId" th:value="${drink.id}">
+            <button type="submit">Kedvencekhez adás</button>
+        </form>
+    </li>
+</ul>
+
+<a href="/favorites/fav-list">Nézd meg a kedvenc italaidat</a>
+</body>
+</html>

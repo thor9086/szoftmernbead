@@ -4,24 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82f5b75d-de17-4197-aa35-c3559d63e45d" name="Changes" comment="Kedvenc italok elkezdve, to Frontend: összes ital kiiratásnál a lista neve allDrinks, kedvenc ital lista neve favoriteDrinks">
+    <list default="true" id="82f5b75d-de17-4197-aa35-c3559d63e45d" name="Changes" comment="Kijelentkezés frissítés, session optimalizálás">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/controller/ContentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/controller/ContentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/controller/FavoriteDrinkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/controller/FavoriteDrinkController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/controller/RecommendController.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/controller/RecommendController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/drink-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/drink-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/controller/FavoritePackageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/controller/FavoritePackageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/model/FavoritePackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/model/FavoritePackage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/repository/FavoriteDrinkRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/repository/FavoriteDrinkRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/repository/FavoritePackageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/repository/FavoritePackageRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/service/FavoriteDrinkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/service/FavoriteDrinkService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/drink-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/drinklist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/favorites.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/favorites.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/recommendForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/recommendForm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/recommendResult.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/recommendResult.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/controller/RecommendController.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/controller/RecommendController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/service/DrinkService.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/service/DrinkService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/service/RecommendationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/service/RecommendationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/favorites.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/favorites.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/recommendForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/recommendForm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/recommendResult.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/recommendResult.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732127231041</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Kijelentkezés frissítés, session optimalizálás">
+      <option name="closed" value="true" />
+      <created>1732623372632</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732623372632</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -193,6 +202,7 @@
     <MESSAGE value="he" />
     <MESSAGE value="html fájlok hozzáadása javítása, pici frissítés" />
     <MESSAGE value="Kedvenc italok elkezdve, to Frontend: összes ital kiiratásnál a lista neve allDrinks, kedvenc ital lista neve favoriteDrinks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Kedvenc italok elkezdve, to Frontend: összes ital kiiratásnál a lista neve allDrinks, kedvenc ital lista neve favoriteDrinks" />
+    <MESSAGE value="Kijelentkezés frissítés, session optimalizálás" />
+    <option name="LAST_COMMIT_MESSAGE" value="Kijelentkezés frissítés, session optimalizálás" />
   </component>
 </project>

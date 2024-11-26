@@ -1,7 +1,6 @@
 //package com.example.topic2.controller;
 //
 //import com.example.topic2.model.FavoritePackage;
-//import com.example.topic2.model.Package;
 //import com.example.topic2.model.User;
 //import com.example.topic2.repository.FavoritePackageRepository;
 //import com.example.topic2.repository.UserRepository;

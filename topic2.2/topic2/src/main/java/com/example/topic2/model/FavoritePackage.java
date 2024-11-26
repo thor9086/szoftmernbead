@@ -22,6 +22,10 @@
 //    private User user; // Felhasználó, akihez a csomag tartozik
 //
 //    @ManyToOne
+//    @JoinColumn(name = "drink_id")
+//    private Drink drink;
+//
+//    @ManyToOne
 //    @JoinColumn(name = "package_id")
 //    private Package pkg; // Kedvenc csomag
 //

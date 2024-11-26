@@ -52,7 +52,7 @@ public class SecurityConfig {
                 )
                 .logout(logout -> logout
                         .logoutUrl("/logout")
-                        .logoutSuccessUrl("/login")
+                        .logoutSuccessUrl("/login?logout")
                         .invalidateHttpSession(true) // Session érvénytelenítése
                         .clearAuthentication(true)
                         .permitAll()

@@ -9,29 +9,26 @@
 <body>
 <header>
     <img src="/images/IbolyAppLogo.png" alt="ibolyApp Logo" />
-    <a href="/login"><button>Bejelentkezés</button></a>
 </header>
 <div class="register-container">
     <h2>Register</h2>
     <form id="registerForm" action="/register" method="post">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+<!--        <label for="email">Email:</label>-->
+        <input type="email" id="email" name="email" required placeholder="Felhasználónév">
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+<!--        <label for="password">Password:</label>-->
+        <input type="password" id="password" name="password" required placeholder="Jelszó">
 
-        <input type="submit" value="Register">
+        <form action="/register" method="get">
+            <button type="submit" class="register-container">Regisztráció</button>
+        </form>
     </form>
     <form action="/login" method="get">
-        <button type="submit" class="login-container">Go to login</button>
+        <button type="submit" class="login-container">Jelentkezz be! Faszkalap!</button>
     </form>
 </div>
 
 <script>
-    // Redirect to /login page
-    function redirectToLogin() {
-        //window.location.href = "/login";
-    }
 
     // Handle form submission
     document.getElementById("registerForm").addEventListener("submit", function(event) {

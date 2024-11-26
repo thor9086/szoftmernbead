@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="hu" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,6 @@
 <body>
 <header>
     <img src="/images/IbolyAppLogo.png" alt="ibolyApp Logo" />
-    <a href="register"><button>Regisztráció</button></a>
 </header>
 <div class="login-container">
     <h2>Login</h2>
@@ -20,9 +19,10 @@
         <button type="submit">Bejelentkezés</button>
     </form>
     <form action="/register" method="get">
-        <button type="submit" class="register-button">Go to Register</button>
+        <button type="submit" class="register-button">Regisztrálj KÖCSÖG GEcI!</button>
     </form>
+    <!-- Kijelentkezési üzenet -->
+    <p th:if="${message}" th:text="${message}"></p>
 </div>
-
 </body>
 </html>

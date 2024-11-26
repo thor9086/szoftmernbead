@@ -1,25 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
     <title>Favorites</title>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            fetch('/favorites/favs')
-                .then(response => response.json())
-                .then(favorites => {
-                    const favList = document.getElementById("fav-list");
-                    favorites.forEach(fav => {
-                        const listItem = document.createElement("li");
-                        listItem.innerHTML = `${fav.drink.name}`;
-                        favList.appendChild(listItem);
-                    });
-                });
-        });
-    </script>
 </head>
 <body>
-<h1>Your Favorite Drinks</h1>
-<ul id="fav-list"></ul>
+<h1>Favorite Drinks</h1>
+<ul>
+    <li th:each="favorite : ${favoriteDrinks}">
+        <span th:text="${favorite.drink.name}"></span> -
+        <span th:text="${favorite.drink.price}"></span>
+    </li>
+</ul>
 </body>
 </html>
