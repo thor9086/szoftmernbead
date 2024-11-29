@@ -11,21 +11,22 @@
     <img src="/images/IbolyAppLogo.png" alt="ibolyApp Logo" />
 </header>
 <div class="register-container">
-    <h2>Register</h2>
+    <h2 class="signup">Regisztráció</h2>
     <form id="registerForm" action="/register" method="post">
 <!--        <label for="email">Email:</label>-->
-        <input type="email" id="email" name="email" required placeholder="Felhasználónév">
+        <input type="email" id="email" name="email" required placeholder="Email">
 
 <!--        <label for="password">Password:</label>-->
         <input type="password" id="password" name="password" required placeholder="Jelszó">
 
         <form action="/register" method="get">
-            <button type="submit" class="register-container">Regisztráció</button>
+            <button type="submit" >Regisztráció</button>
         </form>
     </form>
-    <form action="/login" method="get">
-        <button type="submit" class="login-container">Jelentkezz be! Faszkalap!</button>
-    </form>
+    <p style="font-weight: bold; font-size: 20px;">Ha már van fiókod <a class="click" href="/login">kattints ide!</a></p>
+<!--    <form action="/login" method="get">-->
+<!--        <button type="submit" class="login-container">Jelentkezz be! Faszkalap!</button>-->
+<!--    </form>-->
 </div>
 
 <script>

@@ -14,7 +14,7 @@
     </form>
 
 </header>
-<h1>Welcome, <span th:text="${user}">User</span>!</h1>
+<h1 class="udvozlo">Üdvözöllek, <span th:text="${user}">User</span>!</h1>
 <form action="#" th:action="@{/recommend/recommendResult}" th:object="${person}" method="post">
     <input type="number" id="amount" th:field="*{amount}" required min="1500" max="50000" placeholder="Add meg az összeget forintban amit elköltenél!" />
     <input type="number" id="weight" th:field="*{weight}" min="40" max="180" placeholder="Add meg a súlyod kilogrammban!" />
