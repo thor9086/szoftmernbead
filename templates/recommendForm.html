@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="hu" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ibolyApp</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+<header>
+    <img src="/images/IbolyAppLogo.png" alt="ibolyApp Logo" />
+    <form action="/register" method="get">
+        <button type="submit">regisztráció</button>
+    </form>
+
+</header>
+<h1 class="udvozlo">Üdvözöllek, <span th:text="${user}">User</span>!</h1>
+<form action="#" th:action="@{/recommend/recommendResult}" th:object="${person}" method="post">
+    <input type="number" id="amount" th:field="*{amount}" required min="1500" max="50000" placeholder="Add meg az összeget forintban amit elköltenél!" />
+    <input type="number" id="weight" th:field="*{weight}" min="40" max="180" placeholder="Add meg a súlyod kilogrammban!" />
+    <div class="radio-group">
+        <p>Mennyire szeretnéd jól érezni magad?</p>
+        <label for="kicsit"><input id="kicsit" type="radio" name="feel_good" th:field="*{measure}" value="1" /> Kicsit</label>
+        <label for="kozepesen"><input id="kozepesen" type="radio" name="feel_good" th:field="*{measure}" value="2" /> Közepesen</label>
+        <label for="nagyon"><input id="nagyon" type="radio" name="feel_good" th:field="*{measure}" value="3" /> Nagyon</label
+        >
+    </div>
+    <div class="radio-group">
+        <p>Add meg a nemed</p>
+        <label for="female"><input id="female" type="radio" name="gender" th:field="*{gender}" value="2" /> Nő</label>
+        <label for="male"><input id="male" type="radio" name="gender" th:field="*{gender}" value="1" /> Férfi</label>
+    </div>
+    <button type="submit">Ajánlás</button>
+</form>
+<form action="/logout" method="post">
+    <button type="submit">Kijelentkezés</button>
+</form>
+<script src="/js/scripts.js"></script>
+</body>
+</html>

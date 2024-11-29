@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="hu" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+<header>
+    <img src="/images/IbolyAppLogo.png" alt="ibolyApp Logo" />
+</header>
+<div class="login-container">
+    <h2 class="signup">Bejelentkezés</h2>
+    <form action="/login" method="post">
+       <input type="text" name="username" placeholder="Felhasználónév" />     <!-- ezt írd át mert itt emailt használsz-->
+        <input type="password" name="password" placeholder="Jelszó" />
+
+        <button type="submit">Bejelentkezés</button>
+    </form>
+    <p style="font-weight: bold; font-size: 20px;">Ha még nem regisztráltál <a class="click" href="/register">kattints ide!</a></p>
+<!--    <form action="/register" method="get">-->
+<!--        <button type="submit" class="register-button">Regisztrálj KÖCSÖG GEcI!</button>-->
+<!--    </form>-->
+    <!-- Kijelentkezési üzenet -->
+    <p th:if="${message}" th:text="${message}"></p>
+</div>
+</body>
+</html>
