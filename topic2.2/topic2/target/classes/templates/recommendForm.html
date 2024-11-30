@@ -22,8 +22,7 @@
         <p>Mennyire szeretnéd jól érezni magad?</p>
         <label for="kicsit"><input id="kicsit" type="radio" name="feel_good" th:field="*{measure}" value="1" /> Kicsit</label>
         <label for="kozepesen"><input id="kozepesen" type="radio" name="feel_good" th:field="*{measure}" value="2" /> Közepesen</label>
-        <label for="nagyon"><input id="nagyon" type="radio" name="feel_good" th:field="*{measure}" value="3" /> Nagyon</label
-        >
+        <label for="nagyon"><input id="nagyon" type="radio" name="feel_good" th:field="*{measure}" value="3" /> Nagyon</label>
     </div>
     <div class="radio-group">
         <p>Add meg a nemed</p>
@@ -35,6 +34,13 @@
 <form action="/logout" method="post">
     <button type="submit">Kijelentkezés</button>
 </form>
+
+<form action="@{/list/drinklist}" method="post">
+    <button type="submit">DrinkList</button>
+</form>
+
+<a th:href="@{/list/drinklist}">Nézd meg az ital lapot.</a>
+
 <script src="/js/scripts.js"></script>
 </body>
 </html>

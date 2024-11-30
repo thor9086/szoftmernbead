@@ -28,7 +28,7 @@ public class RecommendationService {
         }
 
         List<Drink> recommended = new ArrayList<>();
-        int strength = person.getMeasure();
+        Integer strength = person.getMeasure();
         System.out.println("Selected strength: " + strength);
 
         if(strength == 1){
