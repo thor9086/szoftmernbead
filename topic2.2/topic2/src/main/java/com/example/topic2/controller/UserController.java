@@ -2,6 +2,7 @@ package com.example.topic2.controller;
 
 import com.example.topic2.model.User;
 import com.example.topic2.repository.UserRepository;
+import com.example.topic2.service.UserService;
 import com.example.topic2.utils.UserUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -26,6 +27,6 @@ public class UserController {
     @Transactional
     public User createUser(@RequestBody User user){
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        return userRepository.save(user);
+        return userService.saveUser(user);
     }
 }

@@ -5,7 +5,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 
 public class UserUtils {
 
-    public static String getCurrentUserEmail() {
+    public static String getCurrentUserByName() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication != null && authentication.isAuthenticated()) {
             return authentication.getName(); // Ez visszaadja a felhasználó email címét (vagy felhasználónevét)

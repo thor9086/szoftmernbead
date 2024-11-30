@@ -13,7 +13,7 @@
         <button type="submit">Back</button>
     </form>
 </header>
-<div class="card-container">
+<!-- <div class="card-container">
     <div class="card">
         <h3>Card 1</h3>
         <li th:each="drink : ${recommendedDrinks1}">
@@ -38,13 +38,98 @@
             <span th:text="${drink.alcoholContent}">Alcohol Content</span>%
         </li>
     </div>
+    <form action="/favourites/add" method="post">
+        <input type="hidden" th:value="${package.id}" name="packageId"/>
+        <button type="submit">Mentés kedvencként</button>
+    </form>
+</div> -->
+
+<!-- <div class="card-container">
+    <div class="card" th:each="package : ${recommendedPackages}">
+        <h3 th:text="${package.name}">Csomag neve</h3>
+        <ul>
+            <li th:each="drink : ${package.drinks}">
+                <span th:text="${drink.name}">Ital neve</span> -
+                <span th:text="${drink.price}">Ár</span> HUF -
+                <span th:text="${drink.alcoholContent}">Alkohol tartalom</span>%
+            </li>
+        </ul>
+        <-- Kedvenc mentése gomb ->
+        <form th:action="@{/favourites/add}" method="post">
+            <input type="hidden" th:value="${package.tempId}" name="packageId"/>
+            <input type="hidden" th:value="${#authentication.name}" name="userEmail"/>
+            <button type="submit">Mentés kedvencként</button>
+        </form>
+    </div>
+</div> -->
+
+<div class="card-container">
+    <div class="card">
+        <h3>Első variáció</h3>
+        <button class="star-button">
+            <img src="/images/star.svg" alt="Favorite" />
+        </button>
+        <ul>
+            <li th:each="drink : ${recommendedDrinks1}">
+                <span th:text="${drink.name}"></span> -
+                <span th:text="${drink.price}">Price</span> HUF -
+                <span th:text="${drink.alcoholContent}">Alcohol Content</span>%
+            </li>
+        </ul>
+    </div>
+    <div class="card">
+        <h3>Második variáció</h3>
+        <button class="star-button">
+            <img src="/images/star.svg" alt="Favorite" />
+        </button>
+        <ul>
+            <li th:each="drink : ${recommendedDrinks2}">
+                <span th:text="${drink.name}"></span> -
+                <span th:text="${drink.price}">Price</span> HUF -
+                <span th:text="${drink.alcoholContent}">Alcohol Content</span>%
+            </li>
+        </ul>
+    </div>
+    <div class="card">
+        <h3>Harmadik variáció</h3>
+        <button class="star-button">
+            <img src="/images/star.svg" alt="Favorite" />
+        </button>
+        <ul>
+            <li th:each="drink : ${recommendedDrinks3}">
+                <span th:text="${drink.name}"></span> -
+                <span th:text="${drink.price}">Price</span> HUF -
+                <span th:text="${drink.alcoholContent}">Alcohol Content</span>%
+            </li>
+        </ul>
+    </div>
 </div>
-<form action="/favorites/favorites" method="post">
-    <button type="submit">DrinkList</button>
-</form>
+
+<a th:href="@{/favourite/drinklist}">Nézd meg az ital lapot.</a>
+
+<script> //backend-el majd valahogy hozzáadod a kedvencekhez
+    document.addEventListener("DOMContentLoaded", function() {
+        const starButtons = document.querySelectorAll(".star-button");
+
+        starButtons.forEach(button => {
+            button.addEventListener("click", function() {
+                // Toggle the "active" class
+                this.classList.toggle("active");
+                // Change the image source based on the active class
+                const img = this.querySelector("img");
+                if (this.classList.contains("active")) {
+                    img.src = "/images/star-filled.svg"; // Path to the yellow star image
+                } else {
+                    img.src = "/images/star.svg"; // Path to the grey star image
+                }
+            });
+        });
+    });
+</script>
+
+
+
 </body>
 </html>
 
 
-</body>
-</html>

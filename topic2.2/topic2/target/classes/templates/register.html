@@ -13,19 +13,16 @@
 <div class="register-container">
     <h2>Register</h2>
     <form id="registerForm" action="/register" method="post">
-<!--        <label for="email">Email:</label>-->
-        <input type="email" id="email" name="email" required placeholder="Felhasználónév">
-
-<!--        <label for="password">Password:</label>-->
+        <input type="text" id="username" name="username" required placeholder="Felhasználónév">
         <input type="password" id="password" name="password" required placeholder="Jelszó">
 
-        <form action="/register" method="get">
-            <button type="submit" class="register-container">Regisztráció</button>
-        </form>
+        <button type="submit" class="register-container">Regisztráció</button>
+
     </form>
-    <form action="/login" method="get">
-        <button type="submit" class="login-container">Jelentkezz be! Faszkalap!</button>
-    </form>
+    <p style="font-weight: bold; font-size: 20px;">Ha már van fiókod <a class="click" href="/login">kattints ide!</a></p>
+    <!--    <form action="/login" method="get">-->
+    <!--        <button type="submit" class="login-container">Jelentkezz be! Faszkalap!</button>-->
+    <!--    </form>-->
 </div>
 
 <script>
@@ -34,9 +31,9 @@
     document.getElementById("registerForm").addEventListener("submit", function(event) {
         event.preventDefault();
 
-        const email = document.getElementById("email").value;
+        const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
-        const userData = JSON.stringify({ email: email, password: password });
+        const userData = JSON.stringify({ username: username, password: password });
 
         fetch("/register", {
             method: "POST",

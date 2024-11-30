@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -5,19 +6,29 @@
 </head>
 <body>
 <h1>Üdvözöllek, <span th:text="${user}">Felhasználó</span>!</h1>
-
+<!-- <a th:href="@{/recommend/recommendForm}">To the form</a> -->
 <h2>Elérhető italok:</h2>
-<ul>
-    <li th:each="drink : ${allDrinks}">
-        <strong th:text="${drink.name}">Ital neve</strong> -
-        Ár: <span th:text="${drink.price}">Ár</span> HUF
-        <form action="/favorites/drinklist" method="post" style="display:inline;">
-            <input type="hidden" name="drinkId" th:value="${drink.id}">
-            <button type="submit">Kedvencekhez adás</button>
-        </form>
-    </li>
-</ul>
 
-<a href="/favorites/fav-list">Nézd meg a kedvenc italaidat</a>
+<table style="width: 80%;margin: auto" class="table table-bordered">
+    <thead class="table-dark">
+    <tr>
+        <th>name</th>
+        <th>alcohol</th>
+        <th>price</th>
+    </tr>
+    </thead>
+    <tbody>
+        <th:block th:each="drink: ${drinklist}">
+            <tr>
+                <td th:text="${drink.name}">hey</td>
+                <td th:text="${drink.alcoholContent}">nig</td>
+                <td th:text="${drink.price}">ga</td>
+                <!-- <td><a th:href="@{'/favour/delete/' + ${person.id}}">Delete</a></td> -->
+            </tr>
+        </th:block>
+    </tbody>
+</table>
+
+<!-- <a th:href="@{/favorites/fav-list}">Nézd meg a kedvenc italaidat</a> -->
 </body>
 </html>

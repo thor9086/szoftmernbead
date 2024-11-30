@@ -1,4 +1,3 @@
-
         document.getElementById('amount').addEventListener('input', function() {
             if (this.validity.rangeOverflow) {
                 this.setCustomValidity('Az összeg nem lehet több mint 50000 Ft.');
@@ -18,4 +17,3 @@
                 this.setCustomValidity('');
             }
         });
-        

@@ -18,26 +18,31 @@ public class UserService implements UserDetailsService{
     @Autowired
     private UserRepository userRepository;
 
+    public User saveUser(User user) {
+        userRepository.save(user);
+        return user;
+    }
+
     public static String getCurrentUser() {
-        String email = UserUtils.getCurrentUserEmail();
-        if (email != null) {
-            return email;
+        String username = UserUtils.getCurrentUserByName();
+        if (username != null) {
+            return username;
         } else {
             return "No user is logged in.";
         }
     }
 
     @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        Optional<User> user = userRepository.findByEmail(email);
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        Optional<User> user = userRepository.findByUsername(username);
         if(user.isPresent()) {
             var userObj = user.get();
             return org.springframework.security.core.userdetails.User.builder()
-                    .username(userObj.getEmail())
+                    .username(userObj.getUsername())
                     .password(userObj.getPassword())
                     .build();
         }else{
-            throw new UsernameNotFoundException(email);
+            throw new UsernameNotFoundException(username);
         }
     }
 }

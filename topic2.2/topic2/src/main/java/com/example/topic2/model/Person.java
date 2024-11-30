@@ -2,23 +2,23 @@ package com.example.topic2.model;
 
 public class Person {
 
-    private int amount;
-    private int measure;
-    private int weight;
-    private int gender;
+    private Integer amount;
+    private Integer measure;
+    private Integer weight;
+    private Integer gender;
 
     public Person() {}
 
-    public Person(int osszeg, int mertek, int weight, int gender) {
-        this.amount = osszeg;
-        this.measure = mertek;
+    public Person(Integer amount, Integer measure, Integer weight, Integer gender) {
+        this.amount = amount;
+        this.measure = measure;
         this.weight = weight;
         this.gender = gender;
     }
 
 
 
-    public int getAmount() {
+    public Integer getAmount() {
         return amount;
     }
 
@@ -26,7 +26,7 @@ public class Person {
         this.amount = amount;
     }
 
-    public int getMeasure() {
+    public Integer getMeasure() {
         return measure;
     }
 
@@ -34,7 +34,7 @@ public class Person {
         this.measure = measure;
     }
 
-    public int getWeight() {
+    public Integer getWeight() {
         return weight;
     }
 
@@ -42,7 +42,7 @@ public class Person {
         this.weight = weight;
     }
 
-    public int getGender() {
+    public Integer getGender() {
         return gender;
     }
 

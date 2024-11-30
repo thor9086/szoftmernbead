@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "Drink")
 @Getter
@@ -19,6 +22,10 @@ public class Drink {
     private double alcoholContent;
     private double volume;
     private boolean isShortDrink;
+
+
+//    @ManyToMany(mappedBy = "drinks")
+//    private List<DrinkPackage> drinkPackages = new ArrayList<>();
 
     public Drink() {}
 
