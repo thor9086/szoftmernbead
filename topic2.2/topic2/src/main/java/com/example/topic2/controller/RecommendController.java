@@ -4,6 +4,7 @@ package com.example.topic2.controller;
 import com.example.topic2.model.Drink;
 //import com.example.topic2.model.DrinkPackage;
 import com.example.topic2.model.Person;
+import com.example.topic2.service.DrinkPackageService;
 import com.example.topic2.service.DrinkService;
 import com.example.topic2.service.RecommendationService;
 import com.example.topic2.utils.UserUtils;
@@ -27,19 +28,13 @@ public class RecommendController {
     @Autowired
     private DrinkService drinkService;
 
-    private List<Drink> createSampleDrinks() {
-        List<Drink> drinks = drinkService.getAllDrinks();
-        return drinks;
+    @Autowired
+    private DrinkPackageService drinkPackageService;
 
-//        List<Drink> italokList = new ArrayList<>();
-//        italokList.add(new Drink("Tatra", 1050, 72, 0.05, true));
-//        italokList.add(new Drink("Jagermeister", 800, 35, 0.05, true));
-//        italokList.add(new Drink("Beer", 550, 5, 0.5, false));
-//        italokList.add(new Drink("Viz", 400, 0, 0.5, false));
-//        italokList.add(new Drink("Bor", 700, 11, 0.5, false));
-//
-//        return italokList;
-    }
+//    private List<Drink> createSampleDrinks() {
+//        List<Drink> drinks = drinkService.getAllDrinks();
+//        return drinks;
+//    }
 
 
     @GetMapping("/recommendForm")
@@ -49,20 +44,20 @@ public class RecommendController {
         return "recommendForm";
     }
 
+
+
     // A POST metódus a beérkező formadatok kezelésére
     @PostMapping("/recommendResult")
     public String getRecommendations(@ModelAttribute Person person, Model model) {
         model.addAttribute("user" , UserUtils.getCurrentUserByName());
-        List<Drink> recommendedDrinks1 = recommendationService.getRecommendations(person, createSampleDrinks());
-        List<Drink> recommendedDrinks2 = recommendationService.getRecommendations(person, createSampleDrinks());
-        List<Drink> recommendedDrinks3 = recommendationService.getRecommendations(person, createSampleDrinks());
+        List<Drink> recommendedDrinks1 = recommendationService.getRecommendations(person, drinkPackageService.createPackage());
+        List<Drink> recommendedDrinks2 = recommendationService.getRecommendations(person, drinkPackageService.createPackage());
+        List<Drink> recommendedDrinks3 = recommendationService.getRecommendations(person, drinkPackageService.createPackage());
 
         model.addAttribute("recommendedDrinks1", recommendedDrinks1);
         model.addAttribute("recommendedDrinks2", recommendedDrinks2);
         model.addAttribute("recommendedDrinks3", recommendedDrinks3);
 
-
-//        model.addAttribute("user", UserUtils.getCurrentUserEmail());
 
 //        // Példacsomagok létrehozása
 //        List<DrinkPackage> recommendedPackages = List.of(
@@ -71,8 +66,7 @@ public class RecommendController {
 //                new DrinkPackage("Csomag 3", recommendationService.getRecommendations(person, createSampleDrinks()))
 //        );
 //
-//        // A modelhez adjuk hozzá a csomagokat
-//        model.addAttribute("recommendedPackages", recommendedPackages);
+//        model.addAttribute("recommendedPackages", drinkPackageService.createRecommendPackages(person));
 
         return "recommendResult";
     }
