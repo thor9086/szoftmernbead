@@ -11,10 +11,7 @@ import com.example.topic2.utils.UserUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -44,6 +41,21 @@ public class RecommendController {
         return "recommendForm";
     }
 
+    @GetMapping("/recommendResult")
+    public String showRecommendResult(
+            @RequestParam(value = "recommendedDrinks", required = false) String recommendedDrinks,
+            Model model) {
+        if (recommendedDrinks != null && !recommendedDrinks.isEmpty()) {
+            // Az italok azonosítóinak feldolgozása
+            List<Long> drinkIds = List.of(recommendedDrinks.split(","))
+                    .stream()
+                    .map(Long::valueOf)
+                    .toList();
+            List<Drink> drinks = drinkPackageService.getDrinksByIds(drinkIds);
+            model.addAttribute("recommendedDrinks", drinks);
+        }
+        return "recommendResult";
+    }
 
 
     // A POST metódus a beérkező formadatok kezelésére
@@ -59,13 +71,13 @@ public class RecommendController {
         model.addAttribute("recommendedDrinks3", recommendedDrinks3);
 
 
-//        // Példacsomagok létrehozása
+        // Példacsomagok létrehozása
 //        List<DrinkPackage> recommendedPackages = List.of(
 //                new DrinkPackage("Csomag 1", recommendationService.getRecommendations(person, createSampleDrinks())),
 //                new DrinkPackage("Csomag 2", recommendationService.getRecommendations(person, createSampleDrinks())),
 //                new DrinkPackage("Csomag 3", recommendationService.getRecommendations(person, createSampleDrinks()))
 //        );
-//
+
 //        model.addAttribute("recommendedPackages", drinkPackageService.createRecommendPackages(person));
 
         return "recommendResult";

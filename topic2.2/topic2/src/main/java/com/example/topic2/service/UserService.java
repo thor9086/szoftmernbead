@@ -5,6 +5,8 @@ import com.example.topic2.repository.UserRepository;
 import com.example.topic2.utils.UserUtils;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -22,6 +24,24 @@ public class UserService implements UserDetailsService{
         userRepository.save(user);
         return user;
     }
+
+//    public Long getCurrentUserId() {
+//        // Lekérjük az aktuális bejelentkezett felhasználót
+//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//
+//        // Ha van bejelentkezett felhasználó, lekérjük az id-t
+//        if (authentication != null && authentication.getPrincipal() instanceof UserDetails) {
+//            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+//            String username = userDetails.getUsername();
+//
+//            // Lekérjük a felhasználó azonosítóját a felhasználói nevéből, például a UserRepository használatával
+//            // Feltételezzük, hogy a User osztály tartalmaz egy 'username' és 'id' mezőt
+//            return userRepository.findByUsername(username).getId();
+//        }
+//
+//        return null; // Ha nincs bejelentkezve felhasználó, visszatérhetünk null-al
+//    }
+
 
     public static String getCurrentUser() {
         String username = UserUtils.getCurrentUserByName();

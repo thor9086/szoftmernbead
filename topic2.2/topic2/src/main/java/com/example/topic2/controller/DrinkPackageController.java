@@ -36,13 +36,28 @@ public class DrinkPackageController {
     @Autowired
     private UserPackageRelationshipService userPackageRelationshipService;
 
-
-    @GetMapping
-    public String showFavourites(Model model) {
-        List<DrinkPackage> favouritePackages = drinkPackageRepository.findAll();
-        model.addAttribute("favouritePackages", favouritePackages);
-        return "favourite";
-    }
+//    @GetMapping("/favourites")
+//    public String showFavourites(Model model) {
+//        // Az aktuális felhasználó lekérése (itt feltételezzük, hogy az aktuális felhasználó ID-ját tudjuk)
+//        User user = userRepository.findById(UserService.getCurrentUserId()).orElse(null);
+//
+//        if (user != null) {
+//            // A felhasználó kedvenc csomagjainak lekérése
+//            List<Favourite> favourites = favouriteRepository.findByUserId(user.getId());
+//            List<Drink> favouriteDrinks = new ArrayList<>();
+//
+//            // A kedvenc csomagok italainak összeállítása
+//            for (Favourite favourite : favourites) {
+//                DrinkPackage drinkPackage = favourite.getPackage();
+//                favouriteDrinks.addAll(drinkPackage.getDrinks());
+//            }
+//
+//            // A kedvenc italok hozzáadása a modellhez
+//            model.addAttribute("favouriteDrinks", favouriteDrinks);
+//        }
+//
+//        return "userFavourites";
+//    }
 
     @PostMapping("/add")
     public String addToFavourites(@RequestParam("recommendedDrinks") List<Long> drinkIds, Model model) {
@@ -50,11 +65,15 @@ public class DrinkPackageController {
         if (!selectedDrinks.isEmpty()) {
             DrinkPackage drinkPackage = new DrinkPackage();
             drinkPackage.setDrinks(selectedDrinks);
-            drinkPackageRepository.save(drinkPackage); // Mentés adatbázisba
+            drinkPackageRepository.save(drinkPackage);
 
             userPackageRelationshipService.saveUserPackageRelationship(drinkPackage.getId(), UserService.getCurrentUser());
         }
 
-        return "redirect:/recommend/recommendResult"; // Sikeres mentés után átirányítás
+        String params = drinkIds.stream()
+                .map(String::valueOf)
+                .reduce((a, b) -> a + "," + b)
+                .orElse("");
+        return "redirect:/recommend/recommendResult?recommendedDrinks=" + params;
     }
 }

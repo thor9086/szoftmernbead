@@ -22,4 +22,9 @@ public class ContentController {
     public String signup(){
         return "register";
     }
+
+    @GetMapping("")
+    public String showHomepage(){
+        return "index";
+    }
 }
