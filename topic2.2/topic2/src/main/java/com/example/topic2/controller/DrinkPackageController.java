@@ -39,27 +39,20 @@ public class DrinkPackageController {
     @Autowired
     private UserService userService;
 
-//    @GetMapping("/list")
-//    public String showFavourites(Model model) {
-//        User user = userRepository.findById(userService.getCurrentUserId()).orElse(null);
-//
-//        if (user != null) {
-//            // A felhasználó kedvenc csomagjainak lekérése
-//            List<DrinkPackage> favourites = UserPackageRelationshipService.findByUser(user);
-//            List<Drink> favouriteDrinks = new ArrayList<>();
-//
-//            // A kedvenc csomagok italainak összeállítása
-//            for (DrinkPackage favourite : favourites) {
-//                DrinkPackage drinkPackage = favourite.getDrinks();
-//                favouriteDrinks.addAll(drinkPackage.getDrinks());
-//            }
-//
-//            // A kedvenc italok hozzáadása a modellhez
-//            model.addAttribute("favouriteDrinks", favouriteDrinks);
-//        }
-//
-//        return "favourite";
-//    }
+    @GetMapping("/list")
+    public String showFavourites(Model model) {
+        User user = userRepository.findById(userService.getCurrentUserId()).orElse(null);
+
+        if (user != null) {
+            // A felhasználó kedvenc csomagjainak lekérése
+            List<Drink> favouriteDrinks = userPackageRelationshipService.getSavedDrinksForCurrentUser();
+
+            // A kedvenc italok hozzáadása a modellhez
+            model.addAttribute("favouriteDrinks", favouriteDrinks);
+        }
+
+        return "favourite";
+    }
 
     @PostMapping("/add")
     public String addToFavourites(@RequestParam("recommendedDrinks") List<Long> drinkIds, Model model) {
