@@ -24,7 +24,7 @@ public class DrinkListController {
     @GetMapping("/drinklist")
     public String showFavouritePage(Model model){
         List<Drink> drinks = drinkService.getAllDrinks();
-        String name = userService.getCurrentUser();
+        String name = userService.getCurrentUserByName();
         model.addAttribute("drinklist" , drinks);
         model.addAttribute("user" , name);
         return "drinklist";

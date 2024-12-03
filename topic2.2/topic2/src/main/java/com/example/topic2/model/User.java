@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Setter
 @Getter
@@ -21,6 +24,5 @@ public class User {
     private String password;
 
 //    @OneToMany(mappedBy = "user")
-//    private List<Favourite> favourites = new ArrayList<>();
-
+//    private List<DrinkPackage> favourites = new ArrayList<>();
 }

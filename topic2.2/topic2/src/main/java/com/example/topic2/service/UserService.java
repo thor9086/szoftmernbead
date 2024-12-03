@@ -43,13 +43,25 @@ public class UserService implements UserDetailsService{
 //    }
 
 
-    public static String getCurrentUser() {
+    public Long getCurrentUserId() {
+        // Az aktuális felhasználó nevét lekérjük
         String username = UserUtils.getCurrentUserByName();
         if (username != null) {
-            return username;
-        } else {
-            return "No user is logged in.";
+            // Kikeressük az adatbázisból a felhasználót a felhasználóneve alapján
+            Optional<User> user = userRepository.findByUsername(username);
+            if (user.isPresent()) {
+                return user.get().getId(); // Visszatérünk az ID-val
+            }
         }
+        return null; // Ha nincs bejelentkezve, vagy a felhasználó nem található
+    }
+
+    public static String getCurrentUserByName() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication != null && authentication.isAuthenticated()) {
+            return authentication.getName(); // Ez visszaadja a felhasználó email címét (vagy felhasználónevét)
+        }
+        return null; // Ha nincs bejelentkezve
     }
 
     @Override

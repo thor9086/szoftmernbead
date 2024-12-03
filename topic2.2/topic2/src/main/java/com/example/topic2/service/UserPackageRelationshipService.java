@@ -9,6 +9,8 @@ import com.example.topic2.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserPackageRelationshipService {
 
@@ -34,10 +36,11 @@ public class UserPackageRelationshipService {
     }
 
 
-//    public List<Favourite> getUserFavourites(String userEmail) {
-//        User user = userRepository.findByEmail(userEmail)
+//    public List<DrinkPackage> getUserFavourites(String username) {
+//        User user = userRepository.findByUsername(username)
 //                .orElseThrow(() -> new IllegalArgumentException("Felhasználó nem található"));
-//        return favouriteRepository.findByUser(user);
+//
+//        return UserPackageRelationshipRepository.findByUserId(user);
 //    }
 }
 
