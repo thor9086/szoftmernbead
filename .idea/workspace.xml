@@ -6,23 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="82f5b75d-de17-4197-aa35-c3559d63e45d" name="Changes" comment="itt már minden is történt. Bolygóméretű update. (nem)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/controller/DrinkListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/controller/DrinkListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/controller/DrinkPackageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/controller/DrinkPackageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/controller/FavouriteController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/controller/RecommendController.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/controller/RecommendController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/model/DrinkPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/model/DrinkPackage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/repository/UserPackageRelationshipRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/repository/UserPackageRelationshipRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/service/UserPackageRelationshipService.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/service/UserPackageRelationshipService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/recommendForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/recommendForm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/recommendResult.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/recommendResult.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/controller/DrinkPackageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/controller/DrinkPackageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/controller/RecommendController.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/controller/RecommendController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/recommendForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/recommendForm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/recommendResult.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/recommendResult.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,56 +45,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Topic2Application.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;backend&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ferge/IdeaProjects/projekt/topic2.2/topic2/src/main/resources/templates&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.Topic2Application.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "backend",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/ferge/IdeaProjects/projekt/topic2.2/topic2/src/main/resources/static/images",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ferge\IdeaProjects\projekt\topic2.2\topic2\src\main\resources\templates" />
       <recent name="C:\Users\ferge\IdeaProjects\projekt\topic2.2\topic2\src\main\resources\static\images" />
       <recent name="C:\Users\ferge\IdeaProjects\projekt\topic2.2\topic2\src\main\resources" />
+      <recent name="C:\Users\ferge\IdeaProjects\projekt\topic2.2\topic2\src\main\resources\templates" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Topic2Application" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-23" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.example.topic2.Topic2Application" />
-      <module name="topic2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.topic2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="projekt" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="projekt" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="projekt" />
       <option name="ENV_FILES" value="" />
@@ -144,6 +104,34 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <method v="2" />
+    </configuration>
+    <configuration name="Topic2Application" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-23" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.example.topic2.Topic2Application" />
+      <module name="topic2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.topic2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="projekt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="projekt" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -203,31 +191,7 @@
       <option name="project" value="LOCAL" />
       <updated>1732968998355</updated>
     </task>
-    <task id="LOCAL-00007" summary="itt már minden is történt. Bolygóméretű update. (nem)">
-      <option name="closed" value="true" />
-      <created>1732991824197</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1732991824197</updated>
-    </task>
-    <task id="LOCAL-00008" summary="itt már minden is történt. Bolygóméretű update. (nem)">
-      <option name="closed" value="true" />
-      <created>1733152251978</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1733152251978</updated>
-    </task>
-    <task id="LOCAL-00009" summary="itt már minden is történt. Bolygóméretű update. (nem)">
-      <option name="closed" value="true" />
-      <created>1733152282103</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1733152282104</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
