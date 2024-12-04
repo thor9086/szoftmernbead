@@ -4,17 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82f5b75d-de17-4197-aa35-c3559d63e45d" name="Changes" comment="itt már minden is történt. Bolygóméretű update. (nem)">
+    <list default="true" id="82f5b75d-de17-4197-aa35-c3559d63e45d" name="Changes" comment="véletlen haladtam valamit de az se jó, DE JÓ!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/controller/ContentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/controller/ContentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/controller/DrinkPackageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/controller/DrinkPackageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/repository/UserPackageRelationshipRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/repository/UserPackageRelationshipRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/service/UserPackageRelationshipService.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/service/UserPackageRelationshipService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/favourite.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/favourite.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/recommendResult.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/recommendResult.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/controller/ContentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/controller/ContentController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/controller/DrinkListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/controller/DrinkListController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/controller/DrinkPackageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/controller/DrinkPackageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/controller/RecommendController.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/controller/RecommendController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/service/UserPackageRelationshipService.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/service/UserPackageRelationshipService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/drinklist.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/drinklist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/recommendResult.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/recommendResult.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733240597570</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="véletlen haladtam valamit de az se jó, DE JÓ!">
+      <option name="closed" value="true" />
+      <created>1733242592787</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1733242592787</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -229,6 +237,7 @@
     <MESSAGE value="bugfixek" />
     <MESSAGE value="reménytelen helyzeten javítottam egy picit. Kicommentelt részeket meg kellene csinálni." />
     <MESSAGE value="itt már minden is történt. Bolygóméretű update. (nem)" />
-    <option name="LAST_COMMIT_MESSAGE" value="itt már minden is történt. Bolygóméretű update. (nem)" />
+    <MESSAGE value="véletlen haladtam valamit de az se jó, DE JÓ!" />
+    <option name="LAST_COMMIT_MESSAGE" value="véletlen haladtam valamit de az se jó, DE JÓ!" />
   </component>
 </project>

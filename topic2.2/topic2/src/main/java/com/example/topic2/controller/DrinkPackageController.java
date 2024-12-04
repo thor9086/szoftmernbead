@@ -2,25 +2,19 @@ package com.example.topic2.controller;
 
 import com.example.topic2.model.Drink;
 import com.example.topic2.model.DrinkPackage;
-import com.example.topic2.model.Person;
-import com.example.topic2.model.User;
 import com.example.topic2.repository.DrinkPackageRepository;
-import com.example.topic2.repository.DrinkRepository;
-import com.example.topic2.repository.UserRepository;
 import com.example.topic2.service.DrinkPackageService;
 import com.example.topic2.service.UserPackageRelationshipService;
 import com.example.topic2.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+
 import org.springframework.web.bind.annotation.*;
 
-import java.lang.module.ModuleFinder;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
-@Controller
+@RestController
 @RequestMapping("/favourite")
 public class DrinkPackageController {
 
@@ -28,47 +22,27 @@ public class DrinkPackageController {
     private DrinkPackageService drinkPackageService;
 
     @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
     private DrinkPackageRepository drinkPackageRepository;
 
     @Autowired
     private UserPackageRelationshipService userPackageRelationshipService;
 
-    @Autowired
-    private UserService userService;
-
-    @GetMapping("/list")
-    public String showFavourites(Model model) {
-        User user = userRepository.findById(userService.getCurrentUserId()).orElse(null);
-
-        if (user != null) {
-            // A felhasználó kedvenc csomagjainak lekérése
-            List<Drink> favouriteDrinks = userPackageRelationshipService.getSavedDrinksForCurrentUser();
-
-            // A kedvenc italok hozzáadása a modellhez
-            model.addAttribute("favouriteDrinks", favouriteDrinks);
-        }
-
-        return "favourite";
-    }
 
     @PostMapping("/add")
-    public String addToFavourites(@RequestParam("recommendedDrinks") List<Long> drinkIds, Model model) {
-        List<Drink> selectedDrinks = drinkPackageService.getDrinksByIds(drinkIds);
-        if (!selectedDrinks.isEmpty()) {
-            DrinkPackage drinkPackage = new DrinkPackage();
-            drinkPackage.setDrinks(selectedDrinks);
-            drinkPackageRepository.save(drinkPackage);
+    public ResponseEntity<String> addToFavourites(@RequestBody Map<String, List<Long>> request) {
+        List<Long> drinkIds = request.get("recommendedDrinks"); // A listázott italként kapott ID-k
+        if (drinkIds != null && !drinkIds.isEmpty()) {
+            List<Drink> selectedDrinks = drinkPackageService.getDrinksByIds(drinkIds); // Több ital lekérése az ID-k alapján
+            if (!selectedDrinks.isEmpty()) {
+                DrinkPackage drinkPackage = new DrinkPackage();
+                drinkPackage.setDrinks(selectedDrinks); // Az összes ital hozzáadása a csomaghoz
+                drinkPackageRepository.save(drinkPackage); // Az italcsomag mentése
 
-            userPackageRelationshipService.saveUserPackageRelationship(drinkPackage.getId(), UserService.getCurrentUserByName());
+                userPackageRelationshipService.saveUserPackageRelationship(drinkPackage.getId(), UserService.getCurrentUserByName());
+                return ResponseEntity.ok("Drinks added to favourites.");
+            }
         }
-
-//        String params = drinkIds.stream()
-//                .map(String::valueOf)
-//                .reduce((a, b) -> a + "," + b)
-//                .orElse("");
-        return "redirect:/recommend/recommendResult";
+        return ResponseEntity.status(400).body("No drinks selected or invalid drink IDs.");
     }
+
 }
