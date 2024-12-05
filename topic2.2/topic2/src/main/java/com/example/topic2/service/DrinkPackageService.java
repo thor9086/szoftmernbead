@@ -56,12 +56,14 @@ public class DrinkPackageService {
         return drinkPackageRepository.save(packageEntity);
     }
 
-    public List<Drink> getDrinksByPackage(Long packageId) {
+    public DrinkPackage getDrinksByPackage(Long packageId) {
         // Csomag lekérdezése az adatbázisból
         DrinkPackage packageEntity = drinkPackageRepository.findById(packageId)
                 .orElseThrow(() -> new IllegalArgumentException("Package not found"));
         // A csomaghoz tartozó italok visszaadása
-        return packageEntity.getDrinks(); // Helyesen a drinks mezőt hívjuk meg
+        return packageEntity;
+
+//                .getDrinks(); // Helyesen a drinks mezőt hívjuk meg
     }
 
 }

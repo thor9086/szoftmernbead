@@ -29,19 +29,20 @@ public class DrinkPackageController {
 
 
     @PostMapping("/add")
-    public ResponseEntity<String> addToFavourites(@RequestBody Map<String, List<Long>> request) {
-        List<Long> drinkIds = request.get("recommendedDrinks"); // A listázott italként kapott ID-k
-        if (drinkIds != null && !drinkIds.isEmpty()) {
-            List<Drink> selectedDrinks = drinkPackageService.getDrinksByIds(drinkIds); // Több ital lekérése az ID-k alapján
-            if (!selectedDrinks.isEmpty()) {
-                DrinkPackage drinkPackage = new DrinkPackage();
-                drinkPackage.setDrinks(selectedDrinks); // Az összes ital hozzáadása a csomaghoz
-                drinkPackageRepository.save(drinkPackage); // Az italcsomag mentése
+    public ResponseEntity<String> addToFavourites(@RequestParam("packageId") Long id) {
+        DrinkPackage drinkPackage = drinkPackageService.getDrinksByPackage(id);
+//        if (drinkIds != null && !drinkIds.isEmpty()) {
+//            List<Drink> selectedDrinks = drinkPackageService.getDrinksByIds(drinkIds); // Több ital lekérése az ID-k alapján
+//            if (!selectedDrinks.isEmpty()) {
+        if (drinkPackage != null) {
+//                DrinkPackage drinkPackage = new DrinkPackage();
+//                drinkPackage.setDrinks(selectedDrinks); // Az összes ital hozzáadása a csomaghoz
+//                drinkPackageRepository.save(drinkPackage); // Az italcsomag mentése
 
-                userPackageRelationshipService.saveUserPackageRelationship(drinkPackage.getId(), UserService.getCurrentUserByName());
-                return ResponseEntity.ok("Drinks added to favourites.");
-            }
+            userPackageRelationshipService.saveUserPackageRelationship(drinkPackage.getId(), UserService.getCurrentUserByName());
+            return ResponseEntity.ok("Drinks added to favourites.");
         }
+
         return ResponseEntity.status(400).body("No drinks selected or invalid drink IDs.");
     }
 
