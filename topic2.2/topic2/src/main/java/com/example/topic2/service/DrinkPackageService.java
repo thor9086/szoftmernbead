@@ -25,22 +25,26 @@ public class DrinkPackageService {
     @Autowired
     private RecommendationService recommendationService;
 
-
     public List<Drink> createPackage() {
         List<Drink> drinks = drinkService.getAllDrinks();
         return drinks;
     }
 
-    public List<DrinkPackage> createRecommendPackages(Person person) {
-
-        List<DrinkPackage> recommendedPackages = List.of(
-                new DrinkPackage(recommendationService.getRecommendations(person, createPackage())),
-                new DrinkPackage(recommendationService.getRecommendations(person, createPackage())),
-                new DrinkPackage(recommendationService.getRecommendations(person, createPackage()))
-        );
-
-        return recommendedPackages;
-    }
+//    public List<Drink> createPackages(Person person){
+//        List<Drink> recommendedDrinks = recommendationService.getRecommendations(person, createPackage());
+//        return recommendedDrinks;
+//    }
+//
+//    public List<DrinkPackage> createRecommendPackages(Person person) {
+//
+//        List<DrinkPackage> recommendedPackages = List.of(
+//                new DrinkPackage(recommendationService.getRecommendations(person, createPackage())),
+//                new DrinkPackage(recommendationService.getRecommendations(person, createPackage())),
+//                new DrinkPackage(recommendationService.getRecommendations(person, createPackage()))
+//        );
+//
+//        return recommendedPackages;
+//    }
 
     public List<Drink> getDrinksByIds(List<Long> drinkIds) {
         return drinkRepository.findAllById(drinkIds);

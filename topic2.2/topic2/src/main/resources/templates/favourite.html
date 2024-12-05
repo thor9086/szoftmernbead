@@ -12,6 +12,9 @@
     </form>
 </header>
 <h1>Favorite Drinks</h1>
+<div th:if="${favouriteDrinks.empty}">
+    <p>You have no favourite drinks yet.</p>
+</div>
 <div class="card-container">
     <div th:each="favorite : ${favoriteDrinks}" class="card">
         <h3 th:text="${favorite.drink.name}"></h3>

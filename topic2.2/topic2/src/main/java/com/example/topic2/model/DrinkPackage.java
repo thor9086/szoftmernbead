@@ -34,4 +34,3 @@ public class DrinkPackage {
         this.drinks = drinks;
     }
 }
-
