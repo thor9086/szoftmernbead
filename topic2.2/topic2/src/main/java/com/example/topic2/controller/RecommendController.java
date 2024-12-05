@@ -35,6 +35,7 @@ public class RecommendController {
     private UserService userService;
 
 
+
     @GetMapping("/recommendForm")
     public String showRecommendForm(Model model) {
         model.addAttribute("person", new Person());
@@ -66,9 +67,17 @@ public class RecommendController {
         List<Drink> recommendedDrinks2 = recommendationService.getRecommendations(person, drinkPackageService.createPackage());
         List<Drink> recommendedDrinks3 = recommendationService.getRecommendations(person, drinkPackageService.createPackage());
 
+        DrinkPackage package1 = drinkPackageService.savePackage(recommendedDrinks1);
+        DrinkPackage package2 = drinkPackageService.savePackage(recommendedDrinks2);
+        DrinkPackage package3 = drinkPackageService.savePackage(recommendedDrinks3);
+
         model.addAttribute("recommendedDrinks1", recommendedDrinks1);
         model.addAttribute("recommendedDrinks2", recommendedDrinks2);
         model.addAttribute("recommendedDrinks3", recommendedDrinks3);
+
+        model.addAttribute("package1", package1);
+        model.addAttribute("package2", package2);
+        model.addAttribute("package3", package3);
 
 //        List<DrinkPackage> recommendedPackages = List.of(
 //                new DrinkPackage(recommendationService.getRecommendations(person, drinkPackageService.createPackage())),

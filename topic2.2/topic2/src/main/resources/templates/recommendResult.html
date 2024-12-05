@@ -17,7 +17,8 @@
     <div class="card">
         <h3>Első variáció</h3>
         <form th:action="@{/favourite/add}" method="post">
-            <input type="hidden" th:each="drink : ${recommendedDrinks1}" th:value="${drink.id}" name="recommendedDrinks"/>
+            <!-- DrinkPackage ID -->
+            <input type="hidden" th:value="${package1.id}" name="packageId" />
             <button type="submit" class="star-button">
                 <img src="/images/star.svg" alt="Favorite" />
             </button>
@@ -33,7 +34,7 @@
     <div class="card">
         <h3>Második variáció</h3>
         <form th:action="@{/favourite/add}" method="post">
-            <input type="hidden" th:each="drink : ${recommendedDrinks2}" th:value="${drink.id}" name="recommendedDrinks"/>
+            <input type="hidden" th:value="${package2.id}" name="packageId" />
             <button type="submit" class="star-button">
                 <img src="/images/star.svg" alt="Favorite" />
             </button>
@@ -49,7 +50,7 @@
     <div class="card">
         <h3>Harmadik variáció</h3>
         <form th:action="@{/favourite/add}" method="post">
-            <input type="hidden" th:each="drink : ${recommendedDrinks3}" th:value="${drink.id}" name="recommendedDrinks"/>
+            <input type="hidden" th:value="${package3.id}" name="packageId" />
             <button type="submit" class="star-button">
                 <img src="/images/star.svg" alt="Favorite" />
             </button>
@@ -64,11 +65,12 @@
     </div>
 </div>
 
+
 <a th:href="@{/list/drinklist}">Nézd meg az ital lapot.</a>
 
 <a th:href="@{/favourite/list}">Nézd meg a kedvenceid.</a>
 
-<!-- <script> //backend-el majd valahogy hozzáadod a kedvencekhez
+<script> //backend-el majd valahogy hozzáadod a kedvencekhez
     document.addEventListener("DOMContentLoaded", function() {
         const starButtons = document.querySelectorAll(".star-button");
 
@@ -86,9 +88,9 @@
             });
         });
     });
-</script> -->
+</script>
 
-<script>
+<!-- <script>
     document.addEventListener("DOMContentLoaded", function() {
       const starButtons = document.querySelectorAll(".star-button");
 
@@ -130,7 +132,7 @@
       });
   });
 
-</script>
+</script> -->
 
 </body>
 </html>
