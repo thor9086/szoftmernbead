@@ -48,6 +48,23 @@ public class DrinkPackageController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }
     }
+    @PostMapping("/remove")
+    public ResponseEntity<Map<String, Object>> removeFavourite(@RequestParam Long packageId)
+    {
+        Map<String, Object> response = new HashMap<>();
+        try {
+            DrinkPackage drinkPackage = drinkPackageService.getDrinksByPackage(packageId);
+            userPackageRelationshipService.deleteUserPackageRelationship(drinkPackage.getId(), UserService.getCurrentUserByName());
+            response.put("success", true);
+            return ResponseEntity.ok(response);
+        } catch (Exception e)
+        {
+            response.put("success", false);
+            response.put("message", "Failed to remove favourite");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+
+        }
+    }
 
 
 }

@@ -10,22 +10,27 @@ import com.example.topic2.repository.UserRepository;
 import com.example.topic2.utils.UserUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserPackageRelationshipService {
 
-    @Autowired
-    private UserPackageRelationshipRepository userPackageRelationshipRepository;
+
 
     @Autowired
     private DrinkPackageRepository drinkPackageRepository;
 
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private UserPackageRelationshipRepository userPackageRelationshipRepository;
+
+
 
     public void saveUserPackageRelationship(Long packageId, String username) {
         User user = userRepository.findByUsername(username)
@@ -38,7 +43,23 @@ public class UserPackageRelationshipService {
         userPackageRelationship.setSavedDrinkPackage(packageEntity);
         userPackageRelationshipRepository.save(userPackageRelationship);
     }
+    @Transactional
+    public void deleteUserPackageRelationship(Long packageId, String username) {
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new IllegalArgumentException("User not found"));
+        DrinkPackage packageEntity = drinkPackageRepository.findById(packageId)
+                .orElseThrow(() -> new IllegalArgumentException("Package not found"));
 
+        Optional<UserPackageRelationship> relationship = userPackageRelationshipRepository
+                .findByUserAndSavedDrinkPackage(user, packageEntity);
+
+        if (relationship.isPresent()) {
+            userPackageRelationshipRepository.delete(relationship.get());
+
+        } else {
+            throw new IllegalArgumentException("Relationship not found");
+        }
+    }
 
 //    public List<DrinkPackage> getUserFavourites(String username) {
 //        User user = userRepository.findByUsername(username)

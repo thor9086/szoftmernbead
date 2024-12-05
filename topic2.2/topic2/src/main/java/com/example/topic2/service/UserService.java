@@ -63,7 +63,10 @@ public class UserService implements UserDetailsService{
         }
         return null; // Ha nincs bejelentkezve
     }
-
+    public User findUserByUsername(String username) {
+        return userRepository.findByUsername(username)
+                .orElseThrow(() -> new IllegalArgumentException("User not found"));
+    }
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<User> user = userRepository.findByUsername(username);

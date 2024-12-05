@@ -78,8 +78,10 @@
                 event.preventDefault();
                 const form = this.closest(".favourite-form");
                 const packageId = form.querySelector("input[name='packageId']").value;
+                const isActive = this.classList.contains("active");
+                const endpoint = isActive ? "/favourite/remove" : "/favourite/add";
 
-                fetch("/favourite/add", {
+                fetch(endpoint, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
@@ -96,7 +98,8 @@
                             } else {
                                 img.src = "/images/star.svg";
                             }
-                            alert("Hozzáadva a kedvencekhez!");
+                            const message = isActive ? "Eltávolítva a kedvencekből!" : "Hozzáadva a kedvencekhez!";
+                            alert(message);
                         } else {
                             alert("Something went wrong!");
                         }
@@ -106,73 +109,6 @@
         });
     });
 </script>
-<!--<script> //backend-el majd valahogy hozzáadod a kedvencekhez
-    document.addEventListener("DOMContentLoaded", function() {
-        const starButtons = document.querySelectorAll(".star-button");
-
-
-        starButtons.forEach(button => {
-            button.addEventListener("click", function() {
-
-                // Toggle the "active" class
-                this.classList.toggle("active");
-                // Change the image source based on the active class
-                const img = this.querySelector("img");
-                if (this.classList.contains("active")) {
-                    img.src = "/images/star-filled.svg"; // Path to the yellow star image
-                } else {
-                    img.src = "/images/star.svg"; // Path to the grey star image
-                }
-
-            });
-        });
-    });
-</script>-->
-
-<!-- <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const starButtons = document.querySelectorAll(".star-button");
-
-      starButtons.forEach(button => {
-          button.addEventListener("click", function(event) {
-              event.preventDefault(); // Megakadályozza az oldal újratöltését
-
-              // Keresd meg a rejtett input mezőt a gomb környezetében
-              const drinkId = this.closest("form").querySelector("input[name='recommendedDrinks']").value;
-
-              // Tárold az ital ID-kat egy tömbben
-              let drinkIds = [];
-              drinkIds.push(drinkId); // Itt például hozzáadjuk az aktuális italt a listához
-
-              // Az összes kiválasztott ital elküldése
-              fetch("/favourite/add", {
-                  method: "POST",
-                  headers: {
-                      "Content-Type": "application/json"
-                  },
-                  body: JSON.stringify({ recommendedDrinks: drinkIds }) // A tömb küldése
-              })
-              .then(response => {
-                  if (response.ok) {
-                      alert("Drinks added to favourites!");
-                      this.classList.toggle("active");
-                      const img = this.querySelector("img");
-                      if (this.classList.contains("active")) {
-                          img.src = "/images/star-filled.svg";
-                      } else {
-                          img.src = "/images/star.svg";
-                      }
-                  } else {
-                      alert("Something went wrong!");
-                  }
-              })
-              .catch(error => console.error("Error:", error));
-          });
-      });
-  });
-
-</script> -->
-
 </body>
 </html>
 
