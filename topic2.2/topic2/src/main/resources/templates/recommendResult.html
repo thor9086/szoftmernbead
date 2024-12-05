@@ -16,10 +16,10 @@
 <div class="card-container">
     <div class="card">
         <h3>Első variáció</h3>
-        <form th:action="@{/favourite/add}" method="post">
+        <form class="favourite-form" th:action="@{/favourite/add}" method="post">
             <!-- DrinkPackage ID -->
             <input type="hidden" th:value="${package1.id}" name="packageId" />
-            <button type="submit" class="star-button">
+            <button type="button" class="star-button">
                 <img src="/images/star.svg" alt="Favorite" />
             </button>
         </form>
@@ -33,9 +33,9 @@
     </div>
     <div class="card">
         <h3>Második variáció</h3>
-        <form th:action="@{/favourite/add}" method="post">
+        <form class="favourite-form" th:action="@{/favourite/add}" method="post">
             <input type="hidden" th:value="${package2.id}" name="packageId" />
-            <button type="submit" class="star-button">
+            <button type="button" class="star-button">
                 <img src="/images/star.svg" alt="Favorite" />
             </button>
         </form>
@@ -49,9 +49,9 @@
     </div>
     <div class="card">
         <h3>Harmadik variáció</h3>
-        <form th:action="@{/favourite/add}" method="post">
+        <form class="favourite-form" th:action="@{/favourite/add}" method="post">
             <input type="hidden" th:value="${package3.id}" name="packageId" />
-            <button type="submit" class="star-button">
+            <button type="button" class="star-button">
                 <img src="/images/star.svg" alt="Favorite" />
             </button>
         </form>
@@ -69,71 +69,43 @@
 <a th:href="@{/list/drinklist}">Nézd meg az ital lapot.</a>
 
 <a th:href="@{/favourite/list}">Nézd meg a kedvenceid.</a>
-
-<script> //backend-el majd valahogy hozzáadod a kedvencekhez
+<script>
     document.addEventListener("DOMContentLoaded", function() {
         const starButtons = document.querySelectorAll(".star-button");
 
         starButtons.forEach(button => {
-            button.addEventListener("click", function() {
-                // Toggle the "active" class
-                this.classList.toggle("active");
-                // Change the image source based on the active class
-                const img = this.querySelector("img");
-                if (this.classList.contains("active")) {
-                    img.src = "/images/star-filled.svg"; // Path to the yellow star image
-                } else {
-                    img.src = "/images/star.svg"; // Path to the grey star image
-                }
+            button.addEventListener("click", function(event) {
+                event.preventDefault();
+                const form = this.closest(".favourite-form");
+                const packageId = form.querySelector("input[name='packageId']").value;
+
+                fetch("/favourite/add", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    body: `packageId=${packageId}`
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            this.classList.toggle("active");
+                            const img = this.querySelector("img");
+                            if (this.classList.contains("active")) {
+                                img.src = "/images/star-filled.svg";
+                            } else {
+                                img.src = "/images/star.svg";
+                            }
+                            alert("Hozzáadva a kedvencekhez!");
+                        } else {
+                            alert("Something went wrong!");
+                        }
+                    })
+                    .catch(error => console.error("Error:", error));
             });
         });
     });
 </script>
-
-<!-- <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const starButtons = document.querySelectorAll(".star-button");
-
-      starButtons.forEach(button => {
-          button.addEventListener("click", function(event) {
-              event.preventDefault(); // Megakadályozza az oldal újratöltését
-
-              // Keresd meg a rejtett input mezőt a gomb környezetében
-              const drinkId = this.closest("form").querySelector("input[name='recommendedDrinks']").value;
-
-              // Tárold az ital ID-kat egy tömbben
-              let drinkIds = [];
-              drinkIds.push(drinkId); // Itt például hozzáadjuk az aktuális italt a listához
-
-              // Az összes kiválasztott ital elküldése
-              fetch("/favourite/add", {
-                  method: "POST",
-                  headers: {
-                      "Content-Type": "application/json"
-                  },
-                  body: JSON.stringify({ recommendedDrinks: drinkIds }) // A tömb küldése
-              })
-              .then(response => {
-                  if (response.ok) {
-                      alert("Drinks added to favourites!");
-                      this.classList.toggle("active");
-                      const img = this.querySelector("img");
-                      if (this.classList.contains("active")) {
-                          img.src = "/images/star-filled.svg";
-                      } else {
-                          img.src = "/images/star.svg";
-                      }
-                  } else {
-                      alert("Something went wrong!");
-                  }
-              })
-              .catch(error => console.error("Error:", error));
-          });
-      });
-  });
-
-</script> -->
-
 </body>
 </html>
 

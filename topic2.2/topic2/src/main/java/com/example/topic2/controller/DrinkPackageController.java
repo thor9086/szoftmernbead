@@ -6,11 +6,15 @@ import com.example.topic2.repository.DrinkPackageRepository;
 import com.example.topic2.service.DrinkPackageService;
 import com.example.topic2.service.UserPackageRelationshipService;
 import com.example.topic2.service.UserService;
+import jakarta.persistence.PostUpdate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import org.springframework.web.bind.annotation.*;
+import org.w3c.dom.events.Event;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -29,21 +33,21 @@ public class DrinkPackageController {
 
 
     @PostMapping("/add")
-    public ResponseEntity<String> addToFavourites(@RequestParam("packageId") Long id) {
-        DrinkPackage drinkPackage = drinkPackageService.getDrinksByPackage(id);
-//        if (drinkIds != null && !drinkIds.isEmpty()) {
-//            List<Drink> selectedDrinks = drinkPackageService.getDrinksByIds(drinkIds); // Több ital lekérése az ID-k alapján
-//            if (!selectedDrinks.isEmpty()) {
-        if (drinkPackage != null) {
-//                DrinkPackage drinkPackage = new DrinkPackage();
-//                drinkPackage.setDrinks(selectedDrinks); // Az összes ital hozzáadása a csomaghoz
-//                drinkPackageRepository.save(drinkPackage); // Az italcsomag mentése
-
+    public ResponseEntity<Map<String, Object>> addFavourite(@RequestParam Long packageId) {
+        Map<String, Object> response = new HashMap<>();
+        try {
+            DrinkPackage drinkPackage = drinkPackageService.getDrinksByPackage(packageId);
             userPackageRelationshipService.saveUserPackageRelationship(drinkPackage.getId(), UserService.getCurrentUserByName());
-            return ResponseEntity.ok("Drinks added to favourites.");
-        }
 
-        return ResponseEntity.status(400).body("No drinks selected or invalid drink IDs.");
+
+            response.put("success", true);
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            response.put("success", false);
+            response.put("message", "Failed to add favourite");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+        }
     }
+
 
 }
