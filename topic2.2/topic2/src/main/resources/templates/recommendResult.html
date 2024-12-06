@@ -78,8 +78,10 @@
                 event.preventDefault();
                 const form = this.closest(".favourite-form");
                 const packageId = form.querySelector("input[name='packageId']").value;
+                const isActive = this.classList.contains("active");
+                const endpoint = isActive ? "/favourite/remove" : "/favourite/add";
 
-                fetch("/favourite/add", {
+                fetch(endpoint, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
@@ -96,7 +98,8 @@
                             } else {
                                 img.src = "/images/star.svg";
                             }
-                            alert("Hozzáadva a kedvencekhez!");
+                            const message = isActive ? "Eltávolítva a kedvencekből!" : "Hozzáadva a kedvencekhez!";
+                            alert(message);
                         } else {
                             alert("Something went wrong!");
                         }
