@@ -2,15 +2,12 @@ package com.example.topic2.controller;
 
 
 import com.example.topic2.model.Drink;
-//import com.example.topic2.model.DrinkPackage;
 import com.example.topic2.model.DrinkPackage;
 import com.example.topic2.model.Person;
-import com.example.topic2.model.User;
 import com.example.topic2.service.DrinkPackageService;
 import com.example.topic2.service.DrinkService;
 import com.example.topic2.service.RecommendationService;
 import com.example.topic2.service.UserService;
-import com.example.topic2.utils.UserUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,9 +21,6 @@ public class RecommendController {
 
     @Autowired
     private RecommendationService recommendationService;
-
-    @Autowired
-    private DrinkService drinkService;
 
     @Autowired
     private DrinkPackageService drinkPackageService;

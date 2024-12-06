@@ -2,7 +2,6 @@ package com.example.topic2.controller;
 
 import com.example.topic2.model.Drink;
 import com.example.topic2.model.User;
-import com.example.topic2.model.UserPackageRelationship;
 import com.example.topic2.repository.UserRepository;
 import com.example.topic2.service.UserPackageRelationshipService;
 import com.example.topic2.service.UserService;
@@ -52,10 +51,7 @@ public class ContentController {
         User user = userRepository.findById(userService.getCurrentUserId()).orElse(null);
 
         if (user != null) {
-            // A felhasználó kedvenc csomagjainak lekérése
             List<Drink> favouriteDrinks = userPackageRelationshipService.getSavedDrinksForCurrentUser();
-
-            // A kedvenc italok hozzáadása a modellhez
             model.addAttribute("favouriteDrinks", favouriteDrinks);
         }
 

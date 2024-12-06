@@ -68,12 +68,6 @@ public class RecommendationService {
             }
         }
 
-
-        //Ezt írja ki az oldal ha nincs semmi itóka, FONTOS JAVíTANI.
-        if (recommended.isEmpty()) {
-            System.out.println("No drinks found for the specified criteria.");
-        }
-
         return recommended;
     }
 }

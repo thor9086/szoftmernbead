@@ -22,7 +22,7 @@ public class AlcoholCalculator {
         // Súly átváltása fontba (1 kg = 2.20462 font)
         double weightLbs = weightKg * 2.20462;
         double r = gender == 1 ? MALE_RATIO : FEMALE_RATIO;
-        // Megfelelő BAC kiválasztása a felhasználói szint alapján
+
         double targetBAC = 0;
         switch (level) {
             case 1:
@@ -51,9 +51,7 @@ public class AlcoholCalculator {
 
         double volumeLiters = drink.getVolume();
         double abv = drink.getAlcoholContent();
-        // Térfogat átváltása milliliterbe (1 liter = 1000 ml)
         double volumeMl = volumeLiters * 1000;
-        // Alkohol tömege grammban
         double alcoholGrams = volumeMl * (abv / 100) * 0.789;
 
         return alcoholGrams;

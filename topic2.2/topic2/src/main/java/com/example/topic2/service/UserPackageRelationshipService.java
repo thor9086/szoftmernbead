@@ -7,11 +7,8 @@ import com.example.topic2.model.User;
 import com.example.topic2.repository.UserPackageRelationshipRepository;
 import com.example.topic2.repository.DrinkPackageRepository;
 import com.example.topic2.repository.UserRepository;
-import com.example.topic2.utils.UserUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -21,16 +18,17 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserPackageRelationshipService {
 
 
-
     @Autowired
     private DrinkPackageRepository drinkPackageRepository;
 
     @Autowired
     private UserRepository userRepository;
+
     @Autowired
     private UserPackageRelationshipRepository userPackageRelationshipRepository;
 
-
+    @Autowired
+    private UserService userService;
 
     public void saveUserPackageRelationship(Long packageId, String username) {
         User user = userRepository.findByUsername(username)
@@ -61,37 +59,22 @@ public class UserPackageRelationshipService {
         }
     }
 
-//    public List<DrinkPackage> getUserFavourites(String username) {
-//        User user = userRepository.findByUsername(username)
-//                .orElseThrow(() -> new IllegalArgumentException("Felhasználó nem található"));
-//
-//        return UserPackageRelationshipRepository.findByUserId(user);
-//    }
-
     public List<Drink> getSavedDrinksForCurrentUser() {
-        // Lekérjük a jelenlegi bejelentkezett felhasználó nevét
-        String username = UserUtils.getCurrentUserByName();
+        String username = userService.getCurrentUserByName();
         if (username != null) {
-            // Kikeressük a felhasználót
             Optional<User> user = userRepository.findByUsername(username);
             if (user.isPresent()) {
-                // A UserPackageRelationship-repository segítségével lekérjük az összes elmentett italcsomagot a felhasználóhoz
                 List<UserPackageRelationship> relationships = userPackageRelationshipRepository.findByUser(user.get());
 
                 List<Drink> savedDrinks = new ArrayList<>();
-                // Iterálunk az elmentett italcsomagokon és összegyűjtjük az italokat
                 for (UserPackageRelationship relationship : relationships) {
                     DrinkPackage savedDrinkPackage = relationship.getSavedDrinkPackage();
                     savedDrinks.addAll(savedDrinkPackage.getDrinks());
                 }
 
-                return savedDrinks;  // Visszatérünk az összes elmentett italral
+                return savedDrinks;
             }
         }
-        return new ArrayList<>();  // Ha nincs bejelentkezett felhasználó, vagy nem találunk italokat, visszaadunk egy üres listát
+        return new ArrayList<>();
     }
 }
-
-
-
-

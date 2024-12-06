@@ -1,18 +1,14 @@
 package com.example.topic2.controller;
 
-import com.example.topic2.model.Drink;
 import com.example.topic2.model.DrinkPackage;
 import com.example.topic2.repository.DrinkPackageRepository;
 import com.example.topic2.service.DrinkPackageService;
 import com.example.topic2.service.UserPackageRelationshipService;
 import com.example.topic2.service.UserService;
-import jakarta.persistence.PostUpdate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-
 import org.springframework.web.bind.annotation.*;
-import org.w3c.dom.events.Event;
 
 import java.util.HashMap;
 import java.util.List;
@@ -24,9 +20,6 @@ public class DrinkPackageController {
 
     @Autowired
     private DrinkPackageService drinkPackageService;
-
-    @Autowired
-    private DrinkPackageRepository drinkPackageRepository;
 
     @Autowired
     private UserPackageRelationshipService userPackageRelationshipService;

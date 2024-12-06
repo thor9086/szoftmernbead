@@ -2,7 +2,6 @@ package com.example.topic2.service;
 
 import com.example.topic2.model.User;
 import com.example.topic2.repository.UserRepository;
-import com.example.topic2.utils.UserUtils;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -25,48 +24,25 @@ public class UserService implements UserDetailsService{
         return user;
     }
 
-//    public Long getCurrentUserId() {
-//        // Lekérjük az aktuális bejelentkezett felhasználót
-//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//
-//        // Ha van bejelentkezett felhasználó, lekérjük az id-t
-//        if (authentication != null && authentication.getPrincipal() instanceof UserDetails) {
-//            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-//            String username = userDetails.getUsername();
-//
-//            // Lekérjük a felhasználó azonosítóját a felhasználói nevéből, például a UserRepository használatával
-//            // Feltételezzük, hogy a User osztály tartalmaz egy 'username' és 'id' mezőt
-//            return userRepository.findByUsername(username).getId();
-//        }
-//
-//        return null; // Ha nincs bejelentkezve felhasználó, visszatérhetünk null-al
-//    }
-
-
     public Long getCurrentUserId() {
-        // Az aktuális felhasználó nevét lekérjük
-        String username = UserUtils.getCurrentUserByName();
+        String username = getCurrentUserByName();
         if (username != null) {
-            // Kikeressük az adatbázisból a felhasználót a felhasználóneve alapján
             Optional<User> user = userRepository.findByUsername(username);
             if (user.isPresent()) {
-                return user.get().getId(); // Visszatérünk az ID-val
+                return user.get().getId();
             }
         }
-        return null; // Ha nincs bejelentkezve, vagy a felhasználó nem található
+        return null;
     }
 
     public static String getCurrentUserByName() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication != null && authentication.isAuthenticated()) {
-            return authentication.getName(); // Ez visszaadja a felhasználó email címét (vagy felhasználónevét)
+            return authentication.getName();
         }
-        return null; // Ha nincs bejelentkezve
+        return null;
     }
-    public User findUserByUsername(String username) {
-        return userRepository.findByUsername(username)
-                .orElseThrow(() -> new IllegalArgumentException("User not found"));
-    }
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<User> user = userRepository.findByUsername(username);
@@ -81,4 +57,3 @@ public class UserService implements UserDetailsService{
         }
     }
 }
-

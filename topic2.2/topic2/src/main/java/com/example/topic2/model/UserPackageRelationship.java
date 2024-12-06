@@ -25,27 +25,4 @@ public class UserPackageRelationship {
     @ManyToOne
     @JoinColumn(name = "package_id", nullable = false)
     private DrinkPackage savedDrinkPackage;
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public DrinkPackage getSavedDrinkPackage() {
-        return savedDrinkPackage;
-    }
-
-    public void setSavedDrinkPackage(DrinkPackage savedDrinkPackage) {
-        this.savedDrinkPackage = savedDrinkPackage;
-    }
 }
