@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
@@ -60,21 +62,30 @@ public class UserPackageRelationshipService {
     }
 
     public List<Drink> getSavedDrinksForCurrentUser() {
-        String username = userService.getCurrentUserByName();
-        if (username != null) {
-            Optional<User> user = userRepository.findByUsername(username);
-            if (user.isPresent()) {
-                List<UserPackageRelationship> relationships = userPackageRelationshipRepository.findByUser(user.get());
+//        String username = userService.getCurrentUserByName();
+//        if (username != null) {
+//            Optional<User> user = userRepository.findByUsername(username);
+//            if (user.isPresent()) {
+//                List<UserPackageRelationship> relationships = userPackageRelationshipRepository.findByUser(user.get());
+//
+//                List<Drink> savedDrinks = new ArrayList<>();
+//                for (UserPackageRelationship relationship : relationships) {
+//                    DrinkPackage savedDrinkPackage = relationship.getSavedDrinkPackage();
+//                    savedDrinks.addAll(savedDrinkPackage.getDrinks());
+//                }
+//
+//                return savedDrinks;
+//            }
+//        }
+//        return new ArrayList<>();
 
-                List<Drink> savedDrinks = new ArrayList<>();
-                for (UserPackageRelationship relationship : relationships) {
-                    DrinkPackage savedDrinkPackage = relationship.getSavedDrinkPackage();
-                    savedDrinks.addAll(savedDrinkPackage.getDrinks());
-                }
+        Long currentUserId = userService.getCurrentUserId(); // Ezt feltételezem, hogy helyesen működik
+        List<UserPackageRelationship> relationships = userPackageRelationshipRepository.findByUserId(currentUserId);
 
-                return savedDrinks;
-            }
-        }
-        return new ArrayList<>();
+        return relationships.stream()
+                .flatMap(rel -> rel.getSavedDrinkPackage().getDrinks().stream())
+                .collect(Collectors.toList());
     }
+
+
 }

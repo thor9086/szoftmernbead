@@ -4,6 +4,7 @@ import com.example.topic2.model.User;
 import com.example.topic2.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,6 +19,11 @@ public class UserService implements UserDetailsService{
 
     @Autowired
     private UserRepository userRepository;
+
+    public boolean isLoggedIn() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        return auth != null && auth.isAuthenticated() && !(auth instanceof AnonymousAuthenticationToken);
+    }
 
     public User saveUser(User user) {
         userRepository.save(user);

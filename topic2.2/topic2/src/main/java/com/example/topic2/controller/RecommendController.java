@@ -42,7 +42,6 @@ public class RecommendController {
             @RequestParam(value = "recommendedDrinks", required = false) String recommendedDrinks,
             Model model) {
         if (recommendedDrinks != null && !recommendedDrinks.isEmpty()) {
-            // Az italok azonosítóinak feldolgozása
             List<Long> drinkIds = List.of(recommendedDrinks.split(","))
                     .stream()
                     .map(Long::valueOf)
@@ -50,6 +49,9 @@ public class RecommendController {
             List<Drink> drinks = drinkPackageService.getDrinksByIds(drinkIds);
             model.addAttribute("recommendedDrinks", drinks);
         }
+
+        model.addAttribute("isLoggedIn", userService.isLoggedIn());
+
         return "recommendResult";
     }
 
@@ -72,6 +74,8 @@ public class RecommendController {
         model.addAttribute("package1", package1);
         model.addAttribute("package2", package2);
         model.addAttribute("package3", package3);
+
+        model.addAttribute("isLoggedIn", userService.isLoggedIn());
 
 //        List<DrinkPackage> recommendedPackages = List.of(
 //                new DrinkPackage(recommendationService.getRecommendations(person, drinkPackageService.createPackage())),

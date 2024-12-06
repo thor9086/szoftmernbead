@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Repository
 public interface UserPackageRelationshipRepository extends JpaRepository<UserPackageRelationship, Long> {
-    List<UserPackageRelationship> findByUser(User user);
+    List<UserPackageRelationship> findByUserId(Long id);
     Optional<UserPackageRelationship> findByUserAndSavedDrinkPackage(User user, DrinkPackage drinkPackage);
 
 }
