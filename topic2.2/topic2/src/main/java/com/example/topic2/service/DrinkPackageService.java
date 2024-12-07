@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DrinkPackageService {
@@ -33,6 +34,10 @@ public class DrinkPackageService {
         return drinkRepository.findAllById(drinkIds);
     }
 
+    public Optional<DrinkPackage> findById(Long id) {
+        return drinkPackageRepository.findById(id);
+    }
+
     public DrinkPackage savePackage(List<Drink> listOfDrinks) {
         DrinkPackage packageEntity = new DrinkPackage();
         packageEntity.setDrinks(listOfDrinks);
@@ -42,7 +47,6 @@ public class DrinkPackageService {
     public DrinkPackage getDrinksByPackage(Long packageId) {
         DrinkPackage packageEntity = drinkPackageRepository.findById(packageId)
                 .orElseThrow(() -> new IllegalArgumentException("Package not found"));
-
         return packageEntity;
     }
 

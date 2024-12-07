@@ -4,33 +4,104 @@
     <title>Itallista</title>
     <link rel="stylesheet" href="/css/styles.css" />
     <style>
-        .drink-table {
-            width: 80%;
-            margin: auto;
-            border-collapse: collapse;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e1e30 25%, #2e2e42 25%, #2e2e42 50%, #1e1e30 50%, #1e1e30 75%, #2e2e42 75%);
+            background-size: 40px 40px;
+            margin: 0;
+            padding: 0;
+            color: #f5f5f5;
         }
-        .drink-table th, .drink-table td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        .drink-table th {
-            background-color: rgb(23, 27, 44);
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(90deg, #ff6f3c, #ff4e00);
             color: white;
+            padding: 15px 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
-        .drink-table tr:hover {
-            background-color: #f5f5f5;
+        header img {
+            height: 60px;
         }
-        .drink-table td {
-            color: rgb(23, 27, 44);
+        header button {
+            background-color: #ff6f3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        header button:hover {
+            background-color: #ff4e00;
+        }
+        h1, h2 {
+            text-align: center;
+            margin: 20px;
+            color: #ff6f3c;
+        }
+        .drink-category {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #262640;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .drink-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+        .drink-category-header {
+            background-color: #ff4e00;
+            color: white;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .drink-list {
+            padding: 15px;
+        }
+        .drink-list-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #3a3a58;
+        }
+        .drink-list-row:last-child {
+            border-bottom: none;
+        }
+        .drink-name {
+            font-size: 16px;
+            color: #f5f5f5;
+        }
+        .drink-info {
+            font-size: 14px;
+            color: #c2c2d6;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #ff6f3c;
+            color: white;
+            margin-top: 50px;
+            border-top: 5px solid #ff4e00;
+        }
+        @media (max-width: 600px) {
+            .drink-list-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
 <body>
 <header>
-    <img src="/images/IbolyAppLogo.png" alt="ibolyApp Logo" />
+    <img src="/images/IbolyAppLogo.png" alt="IbolyApp Logo" />
     <form action="recommendForm.html" method="get">
         <button type="submit">Vissza</button>
     </form>
@@ -38,65 +109,47 @@
 <h1>Üdvözöllek, <span th:text="${user}">Felhasználó</span>!</h1>
 <h2>Elérhető italok:</h2>
 
-<h3>Sör/Cider</h3>
-<table class="drink-table">
-    <thead>
-    <tr>
-        <th>Név</th>
-        <th>Alkoholtartalom</th>
-        <th>Ár</th>
-    </tr>
-    </thead>
-    <tbody>
-    <th:block th:each="drink: ${beerCider}">
-        <tr>
-            <td th:text="${drink.name}">Név</td>
-            <td th:text="${drink.alcoholContent + ' %'}">Alkoholtartalom</td>
-            <td th:text="${drink.price + ' HUF'}">Ár</td>
-        </tr>
-    </th:block>
-    </tbody>
-</table>
+<div class="drink-category">
+    <div class="drink-category-header">Sör/Cider</div>
+    <div class="drink-list">
+        <th:block th:each="drink: ${beerCider}">
+            <div class="drink-list-row">
+                <span class="drink-name" th:text="${drink.name}">Név</span>
+                <span class="drink-info">Alkoholtartalom: <span th:text="${drink.alcoholContent + ' %'}"></span></span>
+                <span class="drink-info">Ár: <span th:text="${drink.price + ' HUF'}"></span></span>
+            </div>
+        </th:block>
+    </div>
+</div>
 
-<h3>Koktél</h3>
-<table class="drink-table">
-    <thead>
-    <tr>
-        <th>Név</th>
-        <th>Alkoholtartalom</th>
-        <th>Ár</th>
-    </tr>
-    </thead>
-    <tbody>
-    <th:block th:each="drink: ${cocktails}">
-        <tr>
-            <td th:text="${drink.name}">Név</td>
-            <td th:text="${drink.alcoholContent + ' %'}">Alkoholtartalom</td>
-            <td th:text="${drink.price + ' HUF'}">Ár</td>
-        </tr>
-    </th:block>
-    </tbody>
-</table>
+<div class="drink-category">
+    <div class="drink-category-header">Koktél</div>
+    <div class="drink-list">
+        <th:block th:each="drink: ${cocktails}">
+            <div class="drink-list-row">
+                <span class="drink-name" th:text="${drink.name}">Név</span>
+                <span class="drink-info">Alkoholtartalom: <span th:text="${drink.alcoholContent + ' %'}"></span></span>
+                <span class="drink-info">Ár: <span th:text="${drink.price + ' HUF'}"></span></span>
+            </div>
+        </th:block>
+    </div>
+</div>
 
-<h3>Likőr</h3>
-<table class="drink-table">
-    <thead>
-    <tr>
-        <th>Név</th>
-        <th>Alkoholtartalom</th>
-        <th>Ár</th>
-    </tr>
-    </thead>
-    <tbody>
-    <th:block th:each="drink: ${liquors}">
-        <tr>
-            <td th:text="${drink.name}">Név</td>
-            <td th:text="${drink.alcoholContent + ' %'}">Alkoholtartalom</td>
-            <td th:text="${drink.price + ' HUF'}">Ár</td>
-        </tr>
-    </th:block>
-    </tbody>
-</table>
+<div class="drink-category">
+    <div class="drink-category-header">Likőr</div>
+    <div class="drink-list">
+        <th:block th:each="drink: ${liquors}">
+            <div class="drink-list-row">
+                <span class="drink-name" th:text="${drink.name}">Név</span>
+                <span class="drink-info">Alkoholtartalom: <span th:text="${drink.alcoholContent + ' %'}"></span></span>
+                <span class="drink-info">Ár: <span th:text="${drink.price + ' HUF'}"></span></span>
+            </div>
+        </th:block>
+    </div>
+</div>
 
+<footer>
+    <p>&copy; 2024 Itallista. Minden jog fenntartva.</p>
+</footer>
 </body>
 </html>

@@ -30,6 +30,11 @@ public class UserService implements UserDetailsService{
         return user;
     }
 
+    public User findByUsername(String username) {
+        return userRepository.findByUsername(username)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+    }
+
     public Long getCurrentUserId() {
         String username = getCurrentUserByName();
         if (username != null) {

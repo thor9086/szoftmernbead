@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Setter
 @Getter
@@ -20,6 +23,11 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-//    @OneToMany(mappedBy = "user")
-//    private List<DrinkPackage> favourites = new ArrayList<>();
+    @ManyToMany
+    @JoinTable(
+            name = "user_favourite_packages", // Kapcsolótábla neve
+            joinColumns = @JoinColumn(name = "user_id"), // A `User` azonosítója
+            inverseJoinColumns = @JoinColumn(name = "package_id") // A `DrinkPackage` azonosítója
+    )
+    private List<DrinkPackage> drinkPackages = new ArrayList<>();
 }

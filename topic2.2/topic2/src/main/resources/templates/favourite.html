@@ -16,7 +16,7 @@
     <p>You have no favourite drinks yet.</p>
 </div>
 <div class="card-container">
-    <div th:each="favorite : ${favoriteDrinks}" class="card">
+    <div th:each="favourite : ${favouriteDrinks}" class="card">
         <h3 th:text="${favorite.drink.name}"></h3>
         <p>Price: <span th:text="${favorite.drink.price}"></span> HUF</p>
         <p>Alcohol Content: <span th:text="${favorite.drink.alcoholContent}"></span>%</p>
