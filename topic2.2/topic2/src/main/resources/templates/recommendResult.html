@@ -23,11 +23,11 @@
             padding: 15px 30px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
-        header img {
-            height: 60px;
-        }
+        /*header img {*/
+        /*    height: 60px;*/
+        /*}*/
         header button {
-            background-color: #ff6f3c;
+            background-color: #262640;;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -37,7 +37,7 @@
             transition: background-color 0.3s;
         }
         header button:hover {
-            background-color: #ff4e00;
+            background-color: #171b2c;
         }
         h1, h3 {
             text-align: center;
@@ -110,9 +110,10 @@
 <body>
 <header>
     <img src="/images/IbolyAppLogo.png" alt="ibolyApp Logo" />
-    <form action="/recommend/recommendForm" method="get">
-        <button type="submit">Back</button>
-    </form>
+<!--    <form action="/recommend/recommendForm" method="get">-->
+<!--        <button type="submit">Back</button>-->
+<!--    </form>-->
+    <a href="/recommend/recommendForm"><button type="submit">Vissza</button></a>
 </header>
 <h1>Recommended Drinks</h1>
 <div class="card-container">
@@ -166,14 +167,9 @@
     </div>
 </div>
 <a th:href="@{/list/drinklist}">Nézd meg az ital lapot.</a>
-
-<p th:if="${isLoggedIn}">
-    <a th:href="@{/user/drink-packages}">Nézd meg az ajánlott italcsomagokat!</a>
-</p>
 <p th:if="${!isLoggedIn}">
     <a th:href="@{/login}">Jelentkezz be</a>, hogy elérd a kedvenceidet!
 </p>
-
 <footer>
     <p>&copy; 2024 IbolyaRémei. Minden jog fenntartva.</p>
 </footer>
