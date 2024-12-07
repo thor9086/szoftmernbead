@@ -5,14 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ibolyApp</title>
     <link rel="stylesheet" href="/css/styles.css" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e1e30 25%, #2e2e42 25%, #2e2e42 50%, #1e1e30 50%, #1e1e30 75%, #2e2e42 75%);
+            background-size: 40px 40px;
+            margin: 0;
+            padding: 0;
+            color: #f5f5f5;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(90deg, #ff6f3c, #ff4e00);
+            color: white;
+            padding: 15px 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        header img {
+            height: 60px;
+        }
+        header button {
+            background-color: #ff6f3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        header button:hover {
+            background-color: #ff4e00;
+        }
+        h1 {
+            text-align: center;
+            margin: 20px;
+            color: #ff6f3c;
+        }
+        form {
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #262640;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        form input, form button {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        form input::placeholder {
+            color: #c2c2d6;
+        }
+        form button {
+            background-color: #ff6f3c;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        form button:hover {
+            background-color: #ff4e00;
+        }
+        .radio-group {
+            margin-bottom: 15px;
+        }
+        .radio-group p {
+            color: #f5f5f5;
+            margin-bottom: 10px;
+        }
+        .radio-group label {
+            display: block;
+            color: #c2c2d6;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+        .radio-group input {
+            margin-right: 10px;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+            color: #ff6f3c;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #ff6f3c;
+            color: white;
+            margin-top: 50px;
+            border-top: 5px solid #ff4e00;
+        }
+    </style>
 </head>
 <body>
 <header>
     <img src="/images/IbolyAppLogo.png" alt="ibolyApp Logo" />
     <form action="/register" method="get">
-        <button type="submit">regisztráció</button>
+        <button type="submit">Regisztráció</button>
     </form>
-
 </header>
 <h1>Welcome, <span th:text="${user}">User</span>!</h1>
 <form action="#" th:action="@{/recommend/recommendResult}" th:object="${person}" method="post">
@@ -34,9 +139,10 @@
 <form th:action="@{/logout}" method="post">
     <button type="submit">Kijelentkezés</button>
 </form>
-
 <a th:href="@{/list/drinklist}">Nézd meg az ital lapot.</a>
-
+<footer>
+    <p>&copy; 2024 IbolyaRémei. Minden jog fenntartva.</p>
+</footer>
 <script src="/js/scripts.js"></script>
 </body>
 </html>
