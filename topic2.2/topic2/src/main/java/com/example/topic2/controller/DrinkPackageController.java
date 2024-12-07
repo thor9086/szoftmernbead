@@ -1,62 +1,59 @@
-//package com.example.topic2.controller;
-//
-//import com.example.topic2.model.DrinkPackage;
-//import com.example.topic2.repository.DrinkPackageRepository;
-//import com.example.topic2.service.DrinkPackageService;
-////import com.example.topic2.service.UserPackageRelationshipService;
-//import com.example.topic2.service.UserService;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.http.HttpStatus;
-//import org.springframework.http.ResponseEntity;
-//import org.springframework.web.bind.annotation.*;
-//
-//import java.util.HashMap;
-//import java.util.List;
-//import java.util.Map;
-//
-//@RestController
-//@RequestMapping("/favourite")
-//public class DrinkPackageController {
-//
-//    @Autowired
-//    private DrinkPackageService drinkPackageService;
+package com.example.topic2.test;
 
-//    @Autowired
-//    private UserPackageRelationshipService userPackageRelationshipService;
+import com.example.topic2.model.DrinkPackage;
+import com.example.topic2.model.User;
+import com.example.topic2.service.DrinkPackageService;
+import com.example.topic2.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.*;
 
-//
-//    @PostMapping("/add")
-//    public ResponseEntity<Map<String, Object>> addFavourite(@RequestParam Long packageId) {
-//        Map<String, Object> response = new HashMap<>();
-//        try {
-//            DrinkPackage drinkPackage = drinkPackageService.getDrinksByPackage(packageId);
-//            userPackageRelationshipService.saveUserPackageRelationship(drinkPackage.getId(), UserService.getCurrentUserByName());
-//
-//
-//            response.put("success", true);
-//            return ResponseEntity.ok(response);
-//        } catch (Exception e) {
-//            response.put("success", false);
-//            response.put("message", "Failed to add favourite");
-//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
-//        }
-//    }
-//    @PostMapping("/remove")
-//    public ResponseEntity<Map<String, Object>> removeFavourite(@RequestParam Long packageId)
-//    {
-//        Map<String, Object> response = new HashMap<>();
-//        try {
-//            DrinkPackage drinkPackage = drinkPackageService.getDrinksByPackage(packageId);
-//            userPackageRelationshipService.deleteUserPackageRelationship(drinkPackage.getId(), UserService.getCurrentUserByName());
-//            response.put("success", true);
-//            return ResponseEntity.ok(response);
-//        } catch (Exception e)
-//        {
-//            response.put("success", false);
-//            response.put("message", "Failed to remove favourite");
-//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
-//
-//        }
-//    }
-//
-//}
+import java.util.Optional;
+
+@RestController
+@RequestMapping("/favourite")
+public class DrinkPackageController {
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private DrinkPackageService drinkPackageService;
+
+    // Kedvenc csomag hozzáadása
+    @PostMapping("/add")
+    public ResponseEntity<?> addFavourite(@RequestParam Long packageId, Authentication authentication) {
+        String username = authentication.getName();
+        User user = userService.findByUsername(username);
+
+        Optional<DrinkPackage> drinkPackageOptional = drinkPackageService.findById(packageId);
+        if (drinkPackageOptional.isEmpty()) {
+            return ResponseEntity.badRequest().body("Csomag nem található");
+        }
+
+        DrinkPackage drinkPackage = drinkPackageOptional.get();
+        user.getDrinkPackages().add(drinkPackage);
+        userService.saveUser(user);
+
+        return ResponseEntity.ok().body("{\"success\": true}");
+    }
+
+    // Kedvenc csomag eltávolítása
+    @PostMapping("/remove")
+    public ResponseEntity<?> removeFavourite(@RequestParam Long packageId, Authentication authentication) {
+        String username = authentication.getName();
+        User user = userService.findByUsername(username);
+
+        Optional<DrinkPackage> drinkPackageOptional = drinkPackageService.findById(packageId);
+        if (drinkPackageOptional.isEmpty()) {
+            return ResponseEntity.badRequest().body("Csomag nem található");
+        }
+
+        DrinkPackage drinkPackage = drinkPackageOptional.get();
+        user.getDrinkPackages().remove(drinkPackage);
+        userService.saveUser(user);
+
+        return ResponseEntity.ok().body("{\"success\": true}");
+    }
+}

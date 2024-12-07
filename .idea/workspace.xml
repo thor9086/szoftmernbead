@@ -4,31 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82f5b75d-de17-4197-aa35-c3559d63e45d" name="Changes" comment="dinamikusan megjelenő elemek hozzáadása">
+    <list default="true" id="82f5b75d-de17-4197-aa35-c3559d63e45d" name="Changes" comment="UserPackageRelationship javítva.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/controller/ContentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/controller/ContentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/controller/DrinkPackageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/controller/DrinkPackageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/model/Drink.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/model/Drink.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/model/DrinkPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/model/DrinkPackage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/model/UserPackageRelationship.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/model/UserPackageRelationship.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/repository/UserPackageRelationshipRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/repository/UserPackageRelationshipRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/service/DrinkPackageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/service/DrinkPackageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/service/UserPackageRelationshipService.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/service/UserPackageRelationshipService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/drinklist.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/drinklist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/test/FavouritePackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/java/com/example/topic2/test/FavouritePackage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/favourite.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/favourite.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/controller/ContentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/controller/ContentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/controller/DrinkPackageController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/model/Drink.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/model/Drink.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/model/DrinkPackage.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/model/DrinkPackage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/model/UserPackageRelationship.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/repository/UserPackageRelationshipRepository.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/service/DrinkPackageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/service/DrinkPackageService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/service/UserPackageRelationshipService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/com/example/topic2/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/drinklist.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/drinklist.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/favourite.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/favourite.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -273,7 +257,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733476832830</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="UserPackageRelationship javítva.">
+      <option name="closed" value="true" />
+      <created>1733577682905</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1733577682905</updated>
+    </task>
+    <task id="LOCAL-00015" summary="UserPackageRelationship javítva.">
+      <option name="closed" value="true" />
+      <created>1733577715768</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1733577715768</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,6 +306,7 @@
     <MESSAGE value="Package update" />
     <MESSAGE value="Nincs változás, szebb/tisztább kód." />
     <MESSAGE value="dinamikusan megjelenő elemek hozzáadása" />
-    <option name="LAST_COMMIT_MESSAGE" value="dinamikusan megjelenő elemek hozzáadása" />
+    <MESSAGE value="UserPackageRelationship javítva." />
+    <option name="LAST_COMMIT_MESSAGE" value="UserPackageRelationship javítva." />
   </component>
 </project>

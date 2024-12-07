@@ -50,5 +50,9 @@ public class DrinkPackageService {
         return packageEntity;
     }
 
+    public List<DrinkPackage> getAllDrinkPackages() {
+        return drinkPackageRepository.findAll();
+    }
+
 }
 

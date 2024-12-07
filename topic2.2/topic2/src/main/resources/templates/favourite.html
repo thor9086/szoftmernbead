@@ -1,26 +1,31 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="hu" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Favorites</title>
-    <link rel="stylesheet" href="/css/styles.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drink Packages</title>
 </head>
 <body>
-<header>
-    <img src="/images/IbolyAppLogo.png" alt="ibolyApp Logo" />
-    <form th:action="/recommend/recommendForm" method="get">
-        <button type="submit">Vissza</button>
-    </form>
-</header>
-<h1>Favorite Drinks</h1>
-<div th:if="${favouriteDrinks.empty}">
-    <p>You have no favourite drinks yet.</p>
-</div>
-<div class="card-container">
-    <div th:each="favourite : ${favouriteDrinks}" class="card">
-        <h3 th:text="${favorite.drink.name}"></h3>
-        <p>Price: <span th:text="${favorite.drink.price}"></span> HUF</p>
-        <p>Alcohol Content: <span th:text="${favorite.drink.alcoholContent}"></span>%</p>
-    </div>
+<h1>Drink Packages</h1>
+<div>
+    <ul>
+        <!-- Iterálás a drinkPackages listán -->
+        <th:block th:each="drinkPackage : ${drinkPackages}">
+            <h2>Package ID: <span th:text="${drinkPackage.id}"></span></h2>
+            <ul>
+                <!-- Iterálás az italok listáján, amelyek a drinkPackage-ban vannak -->
+                <th:block th:each="drink : ${drinkPackage.drinks}">
+                    <li>
+                        <p>Name: <span th:text="${drink.name}"></span></p>
+                        <p>Price: <span th:text="${drink.price}"></span></p>
+                        <p>Alcohol Content: <span th:text="${drink.alcoholContent}"></span>%</p>
+                        <p>Volume: <span th:text="${drink.volume}"></span> ml</p>
+                    </li>
+                </th:block>
+            </ul>
+        </th:block>
+    </ul>
 </div>
 </body>
 </html>
