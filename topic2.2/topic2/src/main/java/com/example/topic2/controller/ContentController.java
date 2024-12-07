@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -47,21 +48,35 @@ public class ContentController {
         return "index";
     }
 
-    @GetMapping("/favourite/list")
-    public String showFavourites(Model model) {
-//        User user = userRepository.findById(userService.getCurrentUserId()).orElse(null);
+//    @GetMapping("/favourite/list")
+//    public String showFavourites(Model model) {
+////        User user = userRepository.findById(userService.getCurrentUserId()).orElse(null);
+////
+////        if (user != null) {
+////            List<Drink> favouriteDrinks = userPackageRelationshipService.getSavedDrinksForCurrentUser();
+////            System.out.println("Favourite Drinks: " + favouriteDrinks);
+////            model.addAttribute("favouriteDrinks", favouriteDrinks);
+////        }
 //
-//        if (user != null) {
-//            List<Drink> favouriteDrinks = userPackageRelationshipService.getSavedDrinksForCurrentUser();
-//            System.out.println("Favourite Drinks: " + favouriteDrinks);
-//            model.addAttribute("favouriteDrinks", favouriteDrinks);
-//        }
+//        List<DrinkPackage> drinkPackages = drinkPackageService.getAllDrinkPackages();
+//
+//        // Hozzáadjuk a modelhez
+//        model.addAttribute("drinkPackages", drinkPackages);
+//
+//
+//        return "favourite";
+//    }
 
-        List<DrinkPackage> drinkPackages = drinkPackageService.getAllDrinkPackages();
+    @GetMapping("/user/drink-packages")
+    public String showUserDrinkPackages(Model model) {
+        Long userId = userService.getCurrentUserId();
+        User user = userService.getUserById(userId);
 
-        // Hozzáadjuk a modelhez
-        model.addAttribute("drinkPackages", drinkPackages);
-
+        if (user != null) {
+            // Lekérjük a felhasználóhoz tartozó DrinkPackage-eket
+            List<DrinkPackage> drinkPackages = drinkPackageService.getDrinkPackagesByUser(user);
+            model.addAttribute("drinkPackages", drinkPackages);
+        }
 
         return "favourite";
     }

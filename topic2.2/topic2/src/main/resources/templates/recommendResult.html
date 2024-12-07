@@ -166,9 +166,14 @@
     </div>
 </div>
 <a th:href="@{/list/drinklist}">Nézd meg az ital lapot.</a>
+
+<p th:if="${isLoggedIn}">
+    <a th:href="@{/user/drink-packages}">Nézd meg az ajánlott italcsomagokat!</a>
+</p>
 <p th:if="${!isLoggedIn}">
     <a th:href="@{/login}">Jelentkezz be</a>, hogy elérd a kedvenceidet!
 </p>
+
 <footer>
     <p>&copy; 2024 IbolyaRémei. Minden jog fenntartva.</p>
 </footer>

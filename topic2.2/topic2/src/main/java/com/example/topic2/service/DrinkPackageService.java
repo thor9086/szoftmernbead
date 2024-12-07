@@ -2,6 +2,7 @@ package com.example.topic2.service;
 
 import com.example.topic2.model.Drink;
 import com.example.topic2.model.DrinkPackage;
+import com.example.topic2.model.User;
 import com.example.topic2.repository.DrinkRepository;
 import com.example.topic2.repository.DrinkPackageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +53,10 @@ public class DrinkPackageService {
 
     public List<DrinkPackage> getAllDrinkPackages() {
         return drinkPackageRepository.findAll();
+    }
+
+    public List<DrinkPackage> getDrinkPackagesByUser(User user) {
+        return drinkPackageRepository.findByUsers(user);
     }
 
 }

@@ -54,6 +54,10 @@ public class UserService implements UserDetailsService{
         return null;
     }
 
+    public User getUserById(Long userId) {
+        return userRepository.findById(userId).orElse(null);
+    }
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<User> user = userRepository.findByUsername(username);

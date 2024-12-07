@@ -52,13 +52,16 @@ public class RecommendController {
 
         model.addAttribute("isLoggedIn", userService.isLoggedIn());
 
+
         return "recommendResult";
     }
 
 
     @PostMapping("/recommendResult")
     public String showRecommendations(@ModelAttribute Person person, Model model) {
+
         model.addAttribute("user" , userService.getCurrentUserByName());
+
         List<Drink> recommendedDrinks1 = recommendationService.getRecommendations(person, drinkPackageService.createPackage());
         List<Drink> recommendedDrinks2 = recommendationService.getRecommendations(person, drinkPackageService.createPackage());
         List<Drink> recommendedDrinks3 = recommendationService.getRecommendations(person, drinkPackageService.createPackage());
