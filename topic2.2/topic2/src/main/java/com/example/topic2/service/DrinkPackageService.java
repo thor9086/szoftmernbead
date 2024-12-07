@@ -45,16 +45,6 @@ public class DrinkPackageService {
         return drinkPackageRepository.save(packageEntity);
     }
 
-    public DrinkPackage getDrinksByPackage(Long packageId) {
-        DrinkPackage packageEntity = drinkPackageRepository.findById(packageId)
-                .orElseThrow(() -> new IllegalArgumentException("Package not found"));
-        return packageEntity;
-    }
-
-    public List<DrinkPackage> getAllDrinkPackages() {
-        return drinkPackageRepository.findAll();
-    }
-
     public List<DrinkPackage> getDrinkPackagesByUser(User user) {
         return drinkPackageRepository.findByUsers(user);
     }

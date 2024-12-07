@@ -1,4 +1,4 @@
-package com.example.topic2.test;
+package com.example.topic2.controller;
 
 import com.example.topic2.model.DrinkPackage;
 import com.example.topic2.model.User;

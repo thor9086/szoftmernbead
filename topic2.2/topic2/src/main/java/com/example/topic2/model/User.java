@@ -25,9 +25,9 @@ public class User {
 
     @ManyToMany
     @JoinTable(
-            name = "user_favourite_packages", // Kapcsolótábla neve
-            joinColumns = @JoinColumn(name = "user_id"), // A `User` azonosítója
-            inverseJoinColumns = @JoinColumn(name = "package_id") // A `DrinkPackage` azonosítója
+            name = "user_favourite_packages",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "package_id")
     )
     private List<DrinkPackage> drinkPackages = new ArrayList<>();
 }

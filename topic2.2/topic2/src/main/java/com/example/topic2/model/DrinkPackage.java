@@ -29,11 +29,6 @@ public class DrinkPackage {
     )
     private List<Drink> drinks = new ArrayList<>();
 
-    // Many-to-Many kapcsolat Italokkal
-//    @ManyToMany(mappedBy = "drinkPackages", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//    private List<Drink> drinks = new ArrayList<>();
-
-    // Many-to-Many kapcsolat Felhasználókkal
     @ManyToMany(mappedBy = "drinkPackages", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<User> users = new ArrayList<>();
 }

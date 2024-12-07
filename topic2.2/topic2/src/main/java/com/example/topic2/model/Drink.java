@@ -26,11 +26,6 @@ public class Drink {
 
 
     @ManyToMany(mappedBy = "drinks")
-//    @JoinTable(
-//            name = "package_drink", // Kapcsolótábla neve
-//            joinColumns = @JoinColumn(name = "drink_id"), // Ital azonosítója
-//            inverseJoinColumns = @JoinColumn(name = "package_id") // Csomag azonosítója
-//    )
     private List<DrinkPackage> drinkPackages = new ArrayList<>();
 
     public Drink() {}

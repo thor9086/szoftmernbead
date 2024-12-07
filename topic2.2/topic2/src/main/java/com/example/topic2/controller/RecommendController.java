@@ -80,14 +80,6 @@ public class RecommendController {
 
         model.addAttribute("isLoggedIn", userService.isLoggedIn());
 
-//        List<DrinkPackage> recommendedPackages = List.of(
-//                new DrinkPackage(recommendationService.getRecommendations(person, drinkPackageService.createPackage())),
-//                new DrinkPackage(recommendationService.getRecommendations(person, drinkPackageService.createPackage())),
-//                new DrinkPackage(recommendationService.getRecommendations(person, drinkPackageService.createPackage()))
-//        );
-//
-//        model.addAttribute("recommendedPackages", recommendedPackages);
-
         return "recommendResult";
     }
 }
