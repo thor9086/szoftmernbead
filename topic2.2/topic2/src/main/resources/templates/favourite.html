@@ -64,13 +64,12 @@
 
     <ul>
         <div class="card-container">
-        <!-- Iterálás a drinkPackages listán -->
         <th:block th:each="drinkPackage : ${drinkPackages}">
 
                 <div class="card">
             <h3>Csomag: <span th:text="${drinkPackage.id}"></span></h3>
             <ul>
-                <!-- Iterálás az italok listáján, amelyek a drinkPackage-ban vannak -->
+                    
                 <th:block th:each="drink : ${drinkPackage.drinks}">
                     <li>
                         <span th:text="${drink.name}"></span> -

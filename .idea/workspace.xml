@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82f5b75d-de17-4197-aa35-c3559d63e45d" name="Changes" comment="Frontend, dinamikus elemek updade.">
+    <list default="true" id="82f5b75d-de17-4197-aa35-c3559d63e45d" name="Changes" comment="Git szar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/drinklist.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/drinklist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/drinklist.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/drinklist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/favourite.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/favourite.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/favourite.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/favourite.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -323,7 +323,31 @@
       <option name="project" value="LOCAL" />
       <updated>1733661626996</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Git szar">
+      <option name="closed" value="true" />
+      <created>1733669309282</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1733669309282</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Git szar">
+      <option name="closed" value="true" />
+      <created>1733669329966</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1733669329966</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Git szar">
+      <option name="closed" value="true" />
+      <created>1733669393619</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1733669393619</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -361,6 +385,7 @@
     <MESSAGE value="Package_Drink_User relációk done. ShowUserPackages done." />
     <MESSAGE value="Kód tisztítás 2.0" />
     <MESSAGE value="Frontend, dinamikus elemek updade." />
-    <option name="LAST_COMMIT_MESSAGE" value="Frontend, dinamikus elemek updade." />
+    <MESSAGE value="Git szar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Git szar" />
   </component>
 </project>
