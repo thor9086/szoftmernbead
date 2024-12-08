@@ -128,12 +128,11 @@
 <body>
 <header>
     <img src="/images/IbolyAppLogo.png" alt="ibolyApp Logo" />
-<!--    <form action="/register" method="get" class="csunya">-->
-<!--        <button class="kell" type="submit">Regisztráció</button>-->
-<!--    </form>-->
-    <a href="/register"><button type="submit">Regisztráció</button></a>
+
+    <a th:if="${!isLoggedIn}" href="/register"><button type="submit">Regisztráció</button></a>
 </header>
-<h1>Welcome, <span th:text="${user}">User</span>!</h1>
+
+<h1><span th:if="${isLoggedIn}"  th:text="${user}">User</span></h1>
 <form action="#" th:action="@{/recommend/recommendResult}" th:object="${person}" method="post">
     <input type="number" id="amount" th:field="*{amount}" required min="1500" max="50000" placeholder="Add meg az összeget forintban amit elköltenél!" />
     <input type="number" id="weight" th:field="*{weight}" required min="40" max="180" placeholder="Add meg a súlyod kilogrammban!" />
@@ -150,10 +149,16 @@
     </div>
     <button type="submit">Ajánlás</button>
 </form>
-<form th:action="@{/logout}" method="post">
+<form th:if="${isLoggedIn}" th:action="@{/logout}" method="post">
     <button type="submit">Kijelentkezés</button>
 </form>
 <a th:href="@{/list/drinklist}">Nézd meg az ital lapot.</a>
+<p th:if="${!isLoggedIn}">
+    <a th:href="@{/login}">Jelentkezz be</a>, hogy elérd a kedvenceidet!
+</p>
+<p th:if="${isLoggedIn}">
+    <a th:href="@{/user/drink-packages}">Itt elérheted a kedvenceid!</a>
+</p>
 <footer>
     <p>&copy; 2024 IbolyaRémei. Minden jog fenntartva.</p>
 </footer>

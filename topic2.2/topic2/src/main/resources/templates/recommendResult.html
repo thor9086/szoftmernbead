@@ -110,10 +110,8 @@
 <body>
 <header>
     <img src="/images/IbolyAppLogo.png" alt="ibolyApp Logo" />
-<!--    <form action="/recommend/recommendForm" method="get">-->
-<!--        <button type="submit">Back</button>-->
-<!--    </form>-->
-    <a href="/recommend/recommendForm"><button type="submit">Vissza</button></a>
+
+    <a  th:href="@{/recommend/recommendForm}"><button type="submit">Vissza</button></a>
 </header>
 <h1>Recommended Drinks</h1>
 <div class="card-container">
@@ -170,6 +168,10 @@
 <p th:if="${!isLoggedIn}">
     <a th:href="@{/login}">Jelentkezz be</a>, hogy elérd a kedvenceidet!
 </p>
+<p th:if="${isLoggedIn}">
+    <a th:href="@{/user/drink-packages}">Itt elérheted a kedvenceid!</a>
+</p>
+
 <footer>
     <p>&copy; 2024 IbolyaRémei. Minden jog fenntartva.</p>
 </footer>

@@ -28,12 +28,11 @@ public class RecommendController {
     @Autowired
     private UserService userService;
 
-
-
     @GetMapping("/recommendForm")
     public String showRecommendForm(Model model) {
         model.addAttribute("person", new Person());
-        model.addAttribute("user" , userService.getCurrentUserByName());
+        model.addAttribute("user" , "Üdvözöllek " + userService.getCurrentUserByName() + "!");
+        model.addAttribute("isLoggedIn", userService.isLoggedIn());
         return "recommendForm";
     }
 
