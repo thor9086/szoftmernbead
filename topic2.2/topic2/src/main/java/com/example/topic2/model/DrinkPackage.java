@@ -8,7 +8,6 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @Entity
 @Table(name = "Package")
@@ -30,7 +29,6 @@ public class DrinkPackage {
     )
     private List<Drink> drinks = new ArrayList<>();
 
-    public DrinkPackage(List<Drink> drinks) {
-        this.drinks = drinks;
-    }
+    @ManyToMany(mappedBy = "drinkPackages", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<User> users = new ArrayList<>();
 }

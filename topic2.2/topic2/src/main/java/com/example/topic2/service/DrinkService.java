@@ -17,11 +17,8 @@ public class DrinkService {
         return drinkRepository.findAll();
     }
 
-    public List<Drink> getShortDrinks() {
-        return drinkRepository.findByIsShortDrink(true);
-    }
-
     public Optional<Drink> getDrinkId(Long id) {
         return drinkRepository.findById(id);
     }
+
 }

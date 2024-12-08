@@ -7,6 +7,7 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Entity
 @Table(name = "Drink")
 @Getter
@@ -24,8 +25,8 @@ public class Drink {
     private boolean isShortDrink;
 
 
-//    @ManyToMany(mappedBy = "drinks")
-//    private List<DrinkPackage> drinkPackages = new ArrayList<>();
+    @ManyToMany(mappedBy = "drinks")
+    private List<DrinkPackage> drinkPackages = new ArrayList<>();
 
     public Drink() {}
 
@@ -44,17 +45,5 @@ public class Drink {
         this.price = price;
         this.volume = volume;
         this.isShortDrink = isShortDrink;
-    }
-
-
-    @Override
-    public String toString() {
-        return "Drink{" +
-                "name='" + name + '\'' +
-                ", alcoholContent=" + alcoholContent +
-                ", price=" + price +
-                ", volume=" + volume +
-                ", isShortDrink=" + isShortDrink +
-                '}';
     }
 }

@@ -15,10 +15,12 @@ import java.util.stream.Collectors;
 @Controller
 @RequestMapping("/list")
 public class DrinkListController {
+
     @Autowired
-    DrinkService drinkService;
+    private DrinkService drinkService;
+
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     @GetMapping("/drinklist")
     public String showFavouritePage(Model model) {

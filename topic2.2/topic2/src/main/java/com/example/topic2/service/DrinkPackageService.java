@@ -2,13 +2,14 @@ package com.example.topic2.service;
 
 import com.example.topic2.model.Drink;
 import com.example.topic2.model.DrinkPackage;
-import com.example.topic2.model.Person;
+import com.example.topic2.model.User;
 import com.example.topic2.repository.DrinkRepository;
 import com.example.topic2.repository.DrinkPackageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DrinkPackageService {
@@ -30,24 +31,12 @@ public class DrinkPackageService {
         return drinks;
     }
 
-//    public List<Drink> createPackages(Person person){
-//        List<Drink> recommendedDrinks = recommendationService.getRecommendations(person, createPackage());
-//        return recommendedDrinks;
-//    }
-//
-//    public List<DrinkPackage> createRecommendPackages(Person person) {
-//
-//        List<DrinkPackage> recommendedPackages = List.of(
-//                new DrinkPackage(recommendationService.getRecommendations(person, createPackage())),
-//                new DrinkPackage(recommendationService.getRecommendations(person, createPackage())),
-//                new DrinkPackage(recommendationService.getRecommendations(person, createPackage()))
-//        );
-//
-//        return recommendedPackages;
-//    }
-
     public List<Drink> getDrinksByIds(List<Long> drinkIds) {
         return drinkRepository.findAllById(drinkIds);
+    }
+
+    public Optional<DrinkPackage> findById(Long id) {
+        return drinkPackageRepository.findById(id);
     }
 
     public DrinkPackage savePackage(List<Drink> listOfDrinks) {
@@ -56,14 +45,8 @@ public class DrinkPackageService {
         return drinkPackageRepository.save(packageEntity);
     }
 
-    public DrinkPackage getDrinksByPackage(Long packageId) {
-        // Csomag lekérdezése az adatbázisból
-        DrinkPackage packageEntity = drinkPackageRepository.findById(packageId)
-                .orElseThrow(() -> new IllegalArgumentException("Package not found"));
-        // A csomaghoz tartozó italok visszaadása
-        return packageEntity;
-
-//                .getDrinks(); // Helyesen a drinks mezőt hívjuk meg
+    public List<DrinkPackage> getDrinkPackagesByUser(User user) {
+        return drinkPackageRepository.findByUsers(user);
     }
 
 }

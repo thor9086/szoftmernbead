@@ -5,19 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recommended Drinks</title>
     <link rel="stylesheet" href="/css/styles.css" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e1e30 25%, #2e2e42 25%, #2e2e42 50%, #1e1e30 50%, #1e1e30 75%, #2e2e42 75%);
+            background-size: 40px 40px;
+            margin: 0;
+            padding: 0;
+            color: #f5f5f5;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(90deg, #ff6f3c, #ff4e00);
+            color: white;
+            padding: 15px 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        /*header img {*/
+        /*    height: 60px;*/
+        /*}*/
+        header button {
+            background-color: #262640;;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        header button:hover {
+            background-color: #171b2c;
+        }
+        h1, h3 {
+            text-align: center;
+            margin: 20px;
+            color: #ff6f3c;
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .card {
+            background-color: #262640;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+        .card h3 {
+            margin-top: 0;
+        }
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+        li {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        .star-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .star-button img {
+            height: 24px;
+            width: 24px;
+            transition: transform 0.3s;
+        }
+        .star-button:hover img {
+            transform: scale(1.2);
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #ff6f3c;
+            color: white;
+            margin-top: 50px;
+            border-top: 5px solid #ff4e00;
+        }
+        a {
+            text-decoration: none;
+            color: #ff6f3c;
+        }
+        a:hover {
+            color: #ff4e00;
+        }
+    </style>
 </head>
 <body>
 <header>
     <img src="/images/IbolyAppLogo.png" alt="ibolyApp Logo" />
-    <form action="/recommend/recommendForm" method="get">
-        <button type="submit">Back</button>
-    </form>
+
+    <a  th:href="@{/recommend/recommendForm}"><button type="submit">Vissza</button></a>
 </header>
+<h1>Recommended Drinks</h1>
 <div class="card-container">
     <div class="card">
         <h3>Első variáció</h3>
-        <form class="favourite-form" th:action="@{/favourite/add}" method="post">
-            <!-- DrinkPackage ID -->
+        <form th:if="${isLoggedIn}" class="favourite-form" th:action="@{/favourite/add}" method="post">
             <input type="hidden" th:value="${package1.id}" name="packageId" />
             <button type="button" class="star-button">
                 <img src="/images/star.svg" alt="Favorite" />
@@ -33,7 +133,7 @@
     </div>
     <div class="card">
         <h3>Második variáció</h3>
-        <form class="favourite-form" th:action="@{/favourite/add}" method="post">
+        <form th:if="${isLoggedIn}" class="favourite-form" th:action="@{/favourite/add}" method="post">
             <input type="hidden" th:value="${package2.id}" name="packageId" />
             <button type="button" class="star-button">
                 <img src="/images/star.svg" alt="Favorite" />
@@ -49,7 +149,7 @@
     </div>
     <div class="card">
         <h3>Harmadik variáció</h3>
-        <form class="favourite-form" th:action="@{/favourite/add}" method="post">
+        <form th:if="${isLoggedIn}" class="favourite-form" th:action="@{/favourite/add}" method="post">
             <input type="hidden" th:value="${package3.id}" name="packageId" />
             <button type="button" class="star-button">
                 <img src="/images/star.svg" alt="Favorite" />
@@ -64,11 +164,17 @@
         </ul>
     </div>
 </div>
-
-
 <a th:href="@{/list/drinklist}">Nézd meg az ital lapot.</a>
+<p th:if="${!isLoggedIn}">
+    <a th:href="@{/login}">Jelentkezz be</a>, hogy elérd a kedvenceidet!
+</p>
+<p th:if="${isLoggedIn}">
+    <a th:href="@{/user/drink-packages}">Itt elérheted a kedvenceid!</a>
+</p>
 
-<a th:href="@{/favourite/list}">Nézd meg a kedvenceid.</a>
+<footer>
+    <p>&copy; 2024 IbolyaRémei. Minden jog fenntartva.</p>
+</footer>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const starButtons = document.querySelectorAll(".star-button");
@@ -93,13 +199,8 @@
                         if (data.success) {
                             this.classList.toggle("active");
                             const img = this.querySelector("img");
-                            if (this.classList.contains("active")) {
-                                img.src = "/images/star-filled.svg";
-                            } else {
-                                img.src = "/images/star.svg";
-                            }
-                            const message = isActive ? "Eltávolítva a kedvencekből!" : "Hozzáadva a kedvencekhez!";
-                            alert(message);
+                            img.src = this.classList.contains("active") ? "/images/star-filled.svg" : "/images/star.svg";
+                            alert(isActive ? "Removed from favorites!" : "Added to favorites!");
                         } else {
                             alert("Something went wrong!");
                         }
@@ -111,5 +212,3 @@
 </script>
 </body>
 </html>
-
-

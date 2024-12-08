@@ -1,26 +1,90 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="hu" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Favorites</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kedvencek</title>
     <link rel="stylesheet" href="/css/styles.css" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e1e30 25%, #2e2e42 25%, #2e2e42 50%, #1e1e30 50%, #1e1e30 75%, #2e2e42 75%);
+            background-size: 40px 40px;
+            margin: 0;
+            padding: 0;
+            color: #f5f5f5;
+        }
+        header {
+            display: flex;
+            justify-content: center; /* Center the content */
+            align-items: center;
+            background: linear-gradient(90deg, #ff6f3c, #ff4e00);
+            color: white;
+            padding: 15px 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: relative; /* Ensure the header is positioned relative to the page */
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .card {
+            background-color: #262640;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+        .card h3 {
+            margin-top: 0;
+        }
+        h1, h3 {
+            text-align: center;
+            margin: 20px;
+            color: #ff6f3c;
+        }
+    </style>
+
 </head>
 <body>
 <header>
     <img src="/images/IbolyAppLogo.png" alt="ibolyApp Logo" />
-    <form action="/recommend/recommendForm" method="get">
-        <button type="submit">Vissza</button>
-    </form>
+
+    <a  th:href="@{/recommend/recommendForm}"><button type="submit">Kezdőlap</button></a>
 </header>
-<h1>Favorite Drinks</h1>
-<div th:if="${favouriteDrinks.empty}">
-    <p>You have no favourite drinks yet.</p>
-</div>
-<div class="card-container">
-    <div th:each="favorite : ${favoriteDrinks}" class="card">
-        <h3 th:text="${favorite.drink.name}"></h3>
-        <p>Price: <span th:text="${favorite.drink.price}"></span> HUF</p>
-        <p>Alcohol Content: <span th:text="${favorite.drink.alcoholContent}"></span>%</p>
-    </div>
-</div>
+<h1>Kedvencek:</h1>
+
+    <ul>
+        <div class="card-container">
+        <!-- Iterálás a drinkPackages listán -->
+        <th:block th:each="drinkPackage : ${drinkPackages}">
+
+                <div class="card">
+            <h3>Csomag: <span th:text="${drinkPackage.id}"></span></h3>
+            <ul>
+                <!-- Iterálás az italok listáján, amelyek a drinkPackage-ban vannak -->
+                <th:block th:each="drink : ${drinkPackage.drinks}">
+                    <li>
+                        <span th:text="${drink.name}"></span> -
+                        <span th:text="${drink.price}">Price</span> HUF -
+                        <span th:text="${drink.alcoholContent}">Alcohol Content</span>% -
+                        <span th:text="${drink.volume}"></span> l
+                    </li>
+                </th:block>
+            </ul>
+                </div>
+
+        </th:block>
+        </div>
+    </ul>
+
 </body>
 </html>

@@ -5,24 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="/css/styles.css" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e1e30 25%, #2e2e42 25%, #2e2e42 50%, #1e1e30 50%, #1e1e30 75%, #2e2e42 75%);
+            background-size: 40px 40px;
+            margin: 0;
+            padding: 0;
+            color: #f5f5f5;
+        }
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(90deg, #ff6f3c, #ff4e00);
+            color: white;
+            padding: 15px 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        /*header img {*/
+        /*    height: 60px;*/
+        /*}*/
+        .login-container {
+            width: 80%;
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #262640;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .login-container h2 {
+            text-align: center;
+            color: #ff6f3c;
+            margin-bottom: 20px;
+        }
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .login-container input {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .login-container button {
+            background-color: #ff6f3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .login-container button:hover {
+            background-color: #ff4e00;
+        }
+        .login-container p {
+            text-align: center;
+            color: white;
+        }
+        .login-container a {
+            color: #ff6f3c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 <header>
-    <img src="/images/IbolyAppLogo.png" alt="ibolyApp Logo" />
+    <img src="/images/IbolyAppLogo.png" alt="IbolyApp Logo" />
 </header>
 <div class="login-container">
     <h2>Login</h2>
     <form action="/login" method="post">
         <input type="text" name="username" placeholder="Felhasználónév" />
         <input type="password" name="password" placeholder="Jelszó" />
-
         <button type="submit">Bejelentkezés</button>
     </form>
-    <p style="font-weight: bold; font-size: 20px;">Ha még nem regisztráltál <a class="click" href="/register">kattints ide!</a></p>
-    <!--    <form action="/register" method="get">-->
-    <!--        <button type="submit" class="register-button">Regisztrálj KÖCSÖG GEcI!</button>-->
-    <!--    </form>-->
-    <!-- Kijelentkezési üzenet -->
+    <p>Ha még nem regisztráltál <a href="/register">kattints ide!</a></p>
     <p th:if="${message}" th:text="${message}"></p>
 </div>
 </body>

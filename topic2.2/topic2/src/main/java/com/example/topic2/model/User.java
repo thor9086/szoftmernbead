@@ -23,6 +23,11 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-//    @OneToMany(mappedBy = "user")
-//    private List<DrinkPackage> favourites = new ArrayList<>();
+    @ManyToMany
+    @JoinTable(
+            name = "user_favourite_packages",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "package_id")
+    )
+    private List<DrinkPackage> drinkPackages = new ArrayList<>();
 }

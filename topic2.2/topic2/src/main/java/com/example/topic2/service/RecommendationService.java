@@ -29,7 +29,6 @@ public class RecommendationService {
 
         List<Drink> recommended = new ArrayList<>();
         Integer strength = person.getMeasure();
-        System.out.println("Selected strength: " + strength);
 
         if(strength == 1){
             recommended = getDrinks(slightDrinks, person);
@@ -66,12 +65,6 @@ public class RecommendationService {
             } else {
                 break;
             }
-        }
-
-
-        //Ezt írja ki az oldal ha nincs semmi itóka, FONTOS JAVíTANI.
-        if (recommended.isEmpty()) {
-            System.out.println("No drinks found for the specified criteria.");
         }
 
         return recommended;
