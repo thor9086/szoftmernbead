@@ -1,10 +1,10 @@
-package com.example.topic2;
+package com.example.topic2.service;
 
 import com.example.topic2.model.User;
 import com.example.topic2.repository.UserRepository;
-import com.example.topic2.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -15,7 +15,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-
+@ExtendWith(MockitoExtension.class)
 public class UserSErviceTest {
 
     @Mock
@@ -85,7 +85,15 @@ public class UserSErviceTest {
         assertEquals("testUser", username);
     }
 
+    @Test
+    public void testLoadUserByUsername() {
+        when(userRepository.findById(1L)).thenReturn(java.util.Optional.of(testUser));
 
+        User loadedUser = userService.getUserById(1L);
+
+        assertNotNull(loadedUser);
+        assertEquals("testUser", loadedUser.getUsername());
+    }
 
     @Test
     public void testLoadUserByUsername_ThrowsException() {
@@ -95,7 +103,4 @@ public class UserSErviceTest {
             userService.loadUserByUsername("nonexistentUser");
         });
     }
-
-
 }
-

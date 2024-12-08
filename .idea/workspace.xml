@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82f5b75d-de17-4197-aa35-c3559d63e45d" name="Changes" comment="Frontend, dinamikus elemek updade.">
-      <change afterPath="$PROJECT_DIR$/topic2.2/topic2/src/test/java/com/example/topic2/AlcoholCalculatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/topic2.2/topic2/src/test/java/com/example/topic2/DrinkPackageServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/topic2.2/topic2/src/test/java/com/example/topic2/RecommendationServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/topic2.2/topic2/src/test/java/com/example/topic2/UserSErviceTest.java" afterDir="false" />
+    <list default="true" id="82f5b75d-de17-4197-aa35-c3559d63e45d" name="Changes" comment="Git még mindig fos.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/test/java/com/example/topic2/DrinkPackageServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/test/java/com/example/topic2/DrinkPackageServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/test/java/com/example/topic2/RecommendationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/test/java/com/example/topic2/RecommendationServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/test/java/com/example/topic2/UserSErviceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/test/java/com/example/topic2/UserSErviceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,26 +47,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Topic2Application.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;backend&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ferge/IdeaProjects/projekt/topic2.2/topic2/src/main/resources/static/images&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.Topic2Application.executor": "Run",
+    "JUnit.AlcoholCalculatorTest.executor": "Coverage",
+    "JUnit.AlcoholCalculatorTest.testAlcoholDrinkCalc.executor": "Coverage",
+    "JUnit.AlcoholCalculatorTest.testAlcoholPersonCalc_Female.executor": "Run",
+    "JUnit.AlcoholCalculatorTest.testAlcoholPersonCalc_Male.executor": "Run",
+    "JUnit.DrinkPackageServiceTest.executor": "Run",
+    "JUnit.DrinkServiceTest.executor": "Coverage",
+    "JUnit.RecommendationServiceTest.executor": "Run",
+    "JUnit.Topic2ApplicationTests.executor": "Coverage",
+    "JUnit.UserSErviceTest.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "backend",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/ferge/IdeaProjects/projekt/topic2.2/topic2/src/main/resources/static/images",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ferge\IdeaProjects\projekt\topic2.2\topic2\src\main\resources\static\images" />
@@ -75,7 +83,110 @@
       <recent name="C:\Users\ferge\IdeaProjects\projekt\topic2.2\topic2\src\main\resources\templates" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.UserSErviceTest (1)">
+    <configuration name="Topic2Application" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-23" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.example.topic2.Topic2Application" />
+      <module name="topic2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.topic2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DrinkPackageServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="topic2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.topic2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.topic2" />
+      <option name="MAIN_CLASS_NAME" value="com.example.topic2.DrinkPackageServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DrinkServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="topic2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.topic2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.topic2" />
+      <option name="MAIN_CLASS_NAME" value="com.example.topic2.DrinkServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RecommendationServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="topic2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.topic2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.topic2" />
+      <option name="MAIN_CLASS_NAME" value="com.example.topic2.RecommendationServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserSErviceTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="topic2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.topic2.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.topic2.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.topic2.service.UserSErviceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserSErviceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="topic2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.topic2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.topic2" />
+      <option name="MAIN_CLASS_NAME" value="com.example.topic2.UserSErviceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="projekt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="projekt" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="projekt" />
       <option name="ENV_FILES" value="" />
@@ -110,34 +221,15 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <method v="2" />
     </configuration>
-    <configuration name="Topic2Application" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-23" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.example.topic2.Topic2Application" />
-      <module name="topic2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.topic2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="projekt" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="projekt" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserSErviceTest (1)" />
+        <item itemvalue="JUnit.UserSErviceTest" />
+        <item itemvalue="JUnit.RecommendationServiceTest" />
+        <item itemvalue="JUnit.DrinkPackageServiceTest" />
+        <item itemvalue="JUnit.DrinkServiceTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -325,7 +417,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733682894228</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Git még mindig fos.">
+      <option name="closed" value="true" />
+      <created>1733684158840</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1733684158840</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,6 +464,25 @@
     <MESSAGE value="Kód tisztítás 2.0" />
     <MESSAGE value="favourite package done" />
     <MESSAGE value="Frontend, dinamikus elemek updade." />
-    <option name="LAST_COMMIT_MESSAGE" value="Frontend, dinamikus elemek updade." />
+    <MESSAGE value="Git miatt" />
+    <MESSAGE value="Git még mindig fos." />
+    <option name="LAST_COMMIT_MESSAGE" value="Git még mindig fos." />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/projekt$AlcoholCalculatorTest_testAlcoholDrinkCalc.ic" NAME="AlcoholCalculatorTest.testAlcoholDrinkCalc Coverage Results" MODIFIED="1733684444804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.topic2.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/projekt$DrinkServiceTest.ic" NAME="DrinkServiceTest Coverage Results" MODIFIED="1733684692959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.topic2.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/projekt$Topic2ApplicationTests.ic" NAME="Topic2ApplicationTests Coverage Results" MODIFIED="1733684549587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.topic2.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/projekt$UserSErviceTest.ic" NAME="UserSErviceTest Coverage Results" MODIFIED="1733684764861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.topic2.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/projekt$AlcoholCalculatorTest.ic" NAME="AlcoholCalculatorTest Coverage Results" MODIFIED="1733684503441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.topic2.*</FILTER>
+    </SUITE>
   </component>
 </project>

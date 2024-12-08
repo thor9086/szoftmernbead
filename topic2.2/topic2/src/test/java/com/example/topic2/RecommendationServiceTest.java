@@ -1,7 +1,9 @@
-package com.example.topic2.service;
+package com.example.topic2;
 
 import com.example.topic2.model.Drink;
 import com.example.topic2.model.Person;
+import com.example.topic2.service.AlcoholCalculator;
+import com.example.topic2.service.RecommendationService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

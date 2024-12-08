@@ -1,9 +1,10 @@
-package com.example.topic2.service;
+package com.example.topic2;
 
 import com.example.topic2.model.Drink;
 import com.example.topic2.model.DrinkPackage;
 import com.example.topic2.repository.DrinkPackageRepository;
 import com.example.topic2.repository.DrinkRepository;
+import com.example.topic2.service.DrinkPackageService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
