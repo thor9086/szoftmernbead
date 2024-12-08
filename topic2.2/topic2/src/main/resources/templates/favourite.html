@@ -1,31 +1,90 @@
 <!DOCTYPE html>
 <html lang="hu" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Drink Packages</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kedvencek</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e1e30 25%, #2e2e42 25%, #2e2e42 50%, #1e1e30 50%, #1e1e30 75%, #2e2e42 75%);
+            background-size: 40px 40px;
+            margin: 0;
+            padding: 0;
+            color: #f5f5f5;
+        }
+        header {
+            display: flex;
+            justify-content: center; /* Center the content */
+            align-items: center;
+            background: linear-gradient(90deg, #ff6f3c, #ff4e00);
+            color: white;
+            padding: 15px 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: relative; /* Ensure the header is positioned relative to the page */
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .card {
+            background-color: #262640;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+        .card h3 {
+            margin-top: 0;
+        }
+        h1, h3 {
+            text-align: center;
+            margin: 20px;
+            color: #ff6f3c;
+        }
+    </style>
+
 </head>
 <body>
-<h1>Drink Packages for User</h1>
-<div>
+<header>
+    <img src="/images/IbolyAppLogo.png" alt="ibolyApp Logo" />
+
+    <a  th:href="@{/recommend/recommendForm}"><button type="submit">Kezdőlap</button></a>
+</header>
+<h1>Kedvencek:</h1>
+
     <ul>
+        <div class="card-container">
         <!-- Iterálás a drinkPackages listán -->
         <th:block th:each="drinkPackage : ${drinkPackages}">
-            <h2>Package ID: <span th:text="${drinkPackage.id}"></span></h2>
+
+                <div class="card">
+            <h3>Csomag: <span th:text="${drinkPackage.id}"></span></h3>
             <ul>
                 <!-- Iterálás az italok listáján, amelyek a drinkPackage-ban vannak -->
                 <th:block th:each="drink : ${drinkPackage.drinks}">
                     <li>
-                        <p>Name: <span th:text="${drink.name}"></span></p>
-                        <p>Price: <span th:text="${drink.price}"></span></p>
-                        <p>Alcohol Content: <span th:text="${drink.alcoholContent}"></span>%</p>
-                        <p>Volume: <span th:text="${drink.volume}"></span> ml</p>
+                        <span th:text="${drink.name}"></span> -
+                        <span th:text="${drink.price}">Price</span> HUF -
+                        <span th:text="${drink.alcoholContent}">Alcohol Content</span>% -
+                        <span th:text="${drink.volume}"></span> l
                     </li>
                 </th:block>
             </ul>
+                </div>
+
         </th:block>
+        </div>
     </ul>
-</div>
+
 </body>
 </html>

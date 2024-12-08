@@ -103,9 +103,12 @@
 <body>
 <header>
     <img src="/images/IbolyAppLogo.png" alt="IbolyApp Logo" />
-
+<!--    <form action="recommendForm.html" method="get">-->
+<!--        <button type="submit">Vissza</button>-->
+<!--    </form>-->
     <a href="/recommend/recommendForm"><button type="submit">Vissza</button></a>
 </header>
+
 <h2>Elérhető italok:</h2>
 
 <div class="drink-category">
@@ -122,7 +125,7 @@
 </div>
 
 <div class="drink-category">
-    <div class="drink-category-header">Koktél</div>
+    <div class="drink-category-header">Hosszú Italok</div>
     <div class="drink-list">
         <th:block th:each="drink: ${cocktails}">
             <div class="drink-list-row">
