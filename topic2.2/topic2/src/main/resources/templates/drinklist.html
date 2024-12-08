@@ -108,7 +108,7 @@
 <!--    </form>-->
     <a href="/recommend/recommendForm"><button type="submit">Vissza</button></a>
 </header>
-<h1>Üdvözöllek, <span th:text="${user}">Felhasználó</span>!</h1>
+
 <h2>Elérhető italok:</h2>
 
 <div class="drink-category">
@@ -125,7 +125,7 @@
 </div>
 
 <div class="drink-category">
-    <div class="drink-category-header">Koktél</div>
+    <div class="drink-category-header">Hosszú Italok</div>
     <div class="drink-list">
         <th:block th:each="drink: ${cocktails}">
             <div class="drink-list-row">
