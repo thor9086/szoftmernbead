@@ -1,7 +1,8 @@
-package com.example.topic2.service;
+package com.example.topic2;
 
 import com.example.topic2.model.User;
 import com.example.topic2.repository.UserRepository;
+import com.example.topic2.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

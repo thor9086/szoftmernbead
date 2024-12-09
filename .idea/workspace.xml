@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82f5b75d-de17-4197-aa35-c3559d63e45d" name="Changes" comment="Git még mindig fos.">
+    <list default="true" id="82f5b75d-de17-4197-aa35-c3559d63e45d" name="Changes" comment="He">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/test/java/com/example/topic2/DrinkPackageServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/test/java/com/example/topic2/DrinkPackageServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/test/java/com/example/topic2/RecommendationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/test/java/com/example/topic2/RecommendationServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/test/java/com/example/topic2/UserSErviceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/test/java/com/example/topic2/UserSErviceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/test-classes/com/example/topic2/service/UserSErviceTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,35 +48,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Application.Topic2Application.executor": "Run",
-    "JUnit.AlcoholCalculatorTest.executor": "Coverage",
-    "JUnit.AlcoholCalculatorTest.testAlcoholDrinkCalc.executor": "Coverage",
-    "JUnit.AlcoholCalculatorTest.testAlcoholPersonCalc_Female.executor": "Run",
-    "JUnit.AlcoholCalculatorTest.testAlcoholPersonCalc_Male.executor": "Run",
-    "JUnit.DrinkPackageServiceTest.executor": "Run",
-    "JUnit.DrinkServiceTest.executor": "Coverage",
-    "JUnit.RecommendationServiceTest.executor": "Run",
-    "JUnit.Topic2ApplicationTests.executor": "Coverage",
-    "JUnit.UserSErviceTest.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "backend",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ferge/IdeaProjects/projekt/topic2.2/topic2/src/main/resources/static/images",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Topic2Application.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AlcoholCalculatorTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.AlcoholCalculatorTest.testAlcoholDrinkCalc.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.AlcoholCalculatorTest.testAlcoholPersonCalc_Female.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AlcoholCalculatorTest.testAlcoholPersonCalc_Male.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DrinkPackageServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DrinkServiceTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.RecommendationServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Topic2ApplicationTests.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.UserSErviceTest (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserSErviceTest.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;backend&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ferge/IdeaProjects/projekt/topic2.2/topic2/src/main/resources/static/images&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ferge\IdeaProjects\projekt\topic2.2\topic2\src\main\resources\static\images" />
@@ -83,7 +85,7 @@
       <recent name="C:\Users\ferge\IdeaProjects\projekt\topic2.2\topic2\src\main\resources\templates" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserSErviceTest (1)">
+  <component name="RunManager" selected="Application.Topic2Application">
     <configuration name="Topic2Application" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-23" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -223,9 +225,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserSErviceTest (1)" />
         <item itemvalue="JUnit.UserSErviceTest" />
         <item itemvalue="JUnit.RecommendationServiceTest" />
+        <item itemvalue="JUnit.UserSErviceTest (1)" />
         <item itemvalue="JUnit.DrinkPackageServiceTest" />
         <item itemvalue="JUnit.DrinkServiceTest" />
       </list>
@@ -425,7 +427,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733684158840</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="He">
+      <option name="closed" value="true" />
+      <created>1733685241805</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1733685241805</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -466,7 +476,8 @@
     <MESSAGE value="Frontend, dinamikus elemek updade." />
     <MESSAGE value="Git miatt" />
     <MESSAGE value="Git még mindig fos." />
-    <option name="LAST_COMMIT_MESSAGE" value="Git még mindig fos." />
+    <MESSAGE value="He" />
+    <option name="LAST_COMMIT_MESSAGE" value="He" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/projekt$AlcoholCalculatorTest_testAlcoholDrinkCalc.ic" NAME="AlcoholCalculatorTest.testAlcoholDrinkCalc Coverage Results" MODIFIED="1733684444804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
@@ -480,6 +491,9 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/projekt$UserSErviceTest.ic" NAME="UserSErviceTest Coverage Results" MODIFIED="1733684764861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.example.topic2.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/projekt$UserSErviceTest__1_.ic" NAME="UserSErviceTest (1) Coverage Results" MODIFIED="1733685155719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.example.topic2.service.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/projekt$AlcoholCalculatorTest.ic" NAME="AlcoholCalculatorTest Coverage Results" MODIFIED="1733684503441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.example.topic2.*</FILTER>
