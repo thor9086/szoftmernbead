@@ -95,12 +95,13 @@
             padding: 15px;
             background-color: #ff6f3c;
             color: white;
-            margin-top: 50px;
+            margin-top: auto;
             border-top: 5px solid #ff4e00;
         }
         a {
             text-decoration: none;
             color: #ff6f3c;
+            font-weight: bold;
         }
         a:hover {
             color: #ff4e00;
@@ -164,16 +165,19 @@
         </ul>
     </div>
 </div>
-<a th:href="@{/list/drinklist}">Nézd meg az ital lapot.</a>
+
+<p>Az ital lista megtekintéséhez <a class="egybe" th:href="@{/list/drinklist}">kattints ide!</a></p>
 <p th:if="${!isLoggedIn}">
-    <a th:href="@{/login}">Jelentkezz be</a>, hogy elérd a kedvenceidet!
-</p>
+<!--<p>Ha még nem regisztráltál <a href="/register">kattints ide!</a></p>-->
+
+
 <p th:if="${isLoggedIn}">
-    <a th:href="@{/user/drink-packages}">Itt elérheted a kedvenceid!</a>
+A kedvenceid megtekintéséhez <a class="egybe" th:href="@{/user/drink-packages}">kattints ide!</a>
+
 </p>
 
 <footer>
-    <p>&copy; 2024 IbolyaRémei. Minden jog fenntartva.</p>
+    <p>&copy; 2024 IbolyaRémei - Minden jog fenntartva.</p>
 </footer>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
