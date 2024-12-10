@@ -4,12 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82f5b75d-de17-4197-aa35-c3559d63e45d" name="Changes" comment="Vendégként beléptetés hozzáadása">
+    <list default="true" id="82f5b75d-de17-4197-aa35-c3559d63e45d" name="Changes" comment="Git még mindig fos.">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/drinklist.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/drinklist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/favourite.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/favourite.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/recommendForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/recommendForm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/recommendResult.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/recommendResult.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/static/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/drinklist.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/drinklist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/favourite.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/favourite.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/recommendForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/recommendForm.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/recommendResult.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/recommendResult.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/test-classes/com/example/topic2/AlcoholCalculatorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/test-classes/com/example/topic2/AlcoholCalculatorTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/test-classes/com/example/topic2/DrinkPackageServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/test-classes/com/example/topic2/DrinkPackageServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/test-classes/com/example/topic2/RecommendationServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/test-classes/com/example/topic2/RecommendationServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/test-classes/com/example/topic2/UserSErviceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/test-classes/com/example/topic2/UserSErviceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +40,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -60,7 +75,6 @@
     &quot;JUnit.DrinkServiceTest.executor&quot;: &quot;Coverage&quot;,
     &quot;JUnit.RecommendationServiceTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.Topic2ApplicationTests.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.UserSErviceTest (1).executor&quot;: &quot;Run&quot;,
     &quot;JUnit.UserSErviceTest.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;backend&quot;,
@@ -86,6 +100,40 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Topic2Application">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="projekt" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="projekt" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <method v="2" />
+    </configuration>
     <configuration name="Topic2Application" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-23" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -189,45 +237,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="projekt" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <module name="projekt" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserSErviceTest (1)" />
         <item itemvalue="JUnit.UserSErviceTest" />
         <item itemvalue="JUnit.RecommendationServiceTest" />
-        <item itemvalue="JUnit.UserSErviceTest (1)" />
         <item itemvalue="JUnit.DrinkPackageServiceTest" />
         <item itemvalue="JUnit.DrinkServiceTest" />
       </list>
@@ -427,31 +441,7 @@
       <option name="project" value="LOCAL" />
       <updated>1733684158840</updated>
     </task>
-    <task id="LOCAL-00024" summary="He">
-      <option name="closed" value="true" />
-      <created>1733685241805</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1733685241805</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Vendégként beléptetés hozzáadása">
-      <option name="closed" value="true" />
-      <created>1733747122212</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1733747122212</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Vendégként beléptetés hozzáadása">
-      <option name="closed" value="true" />
-      <created>1733747150032</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1733747150032</updated>
-    </task>
-    <option name="localTasksCounter" value="27" />
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,9 +482,7 @@
     <MESSAGE value="Frontend, dinamikus elemek updade." />
     <MESSAGE value="Git miatt" />
     <MESSAGE value="Git még mindig fos." />
-    <MESSAGE value="He" />
-    <MESSAGE value="Vendégként beléptetés hozzáadása" />
-    <option name="LAST_COMMIT_MESSAGE" value="Vendégként beléptetés hozzáadása" />
+    <option name="LAST_COMMIT_MESSAGE" value="Git még mindig fos." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/projekt$AlcoholCalculatorTest_testAlcoholDrinkCalc.ic" NAME="AlcoholCalculatorTest.testAlcoholDrinkCalc Coverage Results" MODIFIED="1733684444804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
@@ -508,9 +496,6 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/projekt$UserSErviceTest.ic" NAME="UserSErviceTest Coverage Results" MODIFIED="1733684764861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.example.topic2.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/projekt$UserSErviceTest__1_.ic" NAME="UserSErviceTest (1) Coverage Results" MODIFIED="1733685155719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>com.example.topic2.service.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/projekt$AlcoholCalculatorTest.ic" NAME="AlcoholCalculatorTest Coverage Results" MODIFIED="1733684503441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.example.topic2.*</FILTER>

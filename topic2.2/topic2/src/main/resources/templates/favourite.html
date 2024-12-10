@@ -67,15 +67,14 @@
         <th:block th:each="drinkPackage : ${drinkPackages}">
 
                 <div class="card">
-            <h3>Csomag: <span th:text="${drinkPackage.id}"></span></h3>
+            <h3>Csomag: </h3>
             <ul>
                     
                 <th:block th:each="drink : ${drinkPackage.drinks}">
                     <li>
                         <span th:text="${drink.name}"></span> -
-                        <span th:text="${drink.price}">Price</span> HUF -
-                        <span th:text="${drink.alcoholContent}">Alcohol Content</span>% -
-                        <span th:text="${drink.volume}"></span> l
+                        <span th:text="${drink.price % 1 == 0 ? drink.price.intValue() : drink.price}">Price</span> HUF -
+                        <span th:text="${drink.alcoholContent % 1 == 0 ? drink.alcoholContent.intValue() : drink.alcoholContent}">Alcohol Content</span>%
                     </li>
                 </th:block>
             </ul>
@@ -84,6 +83,10 @@
         </th:block>
         </div>
     </ul>
+
+<footer>
+    <p>&copy; 2024 IbolyaRémei. Minden jog fenntartva.</p>
+</footer>
 
 </body>
 </html>

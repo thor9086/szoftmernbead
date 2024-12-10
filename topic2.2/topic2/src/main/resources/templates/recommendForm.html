@@ -53,6 +53,7 @@
             color: #ff6f3c;
         }
         form {
+            font-size: 1.2rem;
             width: 80%;
             max-width: 600px;
             margin: 20px auto;
@@ -115,7 +116,7 @@
             padding: 15px;
             background-color: #ff6f3c;
             color: white;
-            margin-top: 50px;
+            margin-top: auto;
             border-top: 5px solid #ff4e00;
         }
         .csunya{
@@ -127,6 +128,7 @@
 </head>
 <body>
 <header>
+<!--    <a  th:href="@{/recommend/recommendForm}"><img src="/images/IbolyAppLogo.png" alt="ibolyApp Logo" /></a>-->
     <img src="/images/IbolyAppLogo.png" alt="ibolyApp Logo" />
 
     <a th:if="${!isLoggedIn}" href="/register"><button type="submit">Regisztráció</button></a>
@@ -152,12 +154,12 @@
 <form th:if="${isLoggedIn}" th:action="@{/logout}" method="post">
     <button type="submit">Kijelentkezés</button>
 </form>
-<a th:href="@{/list/drinklist}">Nézd meg az ital lapot.</a>
-<p th:if="${!isLoggedIn}">
+<p style="font-weight: bold">Az ital lista megtekintéséhez <a class="egybe" th:href="@{/list/drinklist}">kattints ide!</a></p>
+<p style="font-weight: bold" th:if="${!isLoggedIn}">
     <a th:href="@{/login}">Jelentkezz be, hogy elérd a kedvenceidet!</a>
 </p>
-<p th:if="${isLoggedIn}">
-    <a th:href="@{/user/drink-packages}">Itt elérheted a kedvenceid!</a>
+<p style="font-weight: bold" th:if="${isLoggedIn}">
+A kedvenceid megtekintéséhez <a class="egybe" th:href="@{/user/drink-packages}">kattints ide!</a>
 </p>
 <footer>
     <p>&copy; 2024 IbolyaRémei - Minden jog fenntartva.</p>

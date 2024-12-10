@@ -72,7 +72,7 @@
         }
         li {
             margin: 10px 0;
-            font-size: 14px;
+            font-size: 1rem;
         }
         .star-button {
             background: none;
@@ -95,12 +95,13 @@
             padding: 15px;
             background-color: #ff6f3c;
             color: white;
-            margin-top: 50px;
+            margin-top: auto;
             border-top: 5px solid #ff4e00;
         }
         a {
             text-decoration: none;
             color: #ff6f3c;
+            font-weight: bold;
         }
         a:hover {
             color: #ff4e00;
@@ -113,7 +114,7 @@
 
     <a  th:href="@{/recommend/recommendForm}"><button type="submit">Vissza</button></a>
 </header>
-<h1>Recommended Drinks</h1>
+<h1>Ajánlott italok</h1>
 <div class="card-container">
     <div class="card">
         <h3>Első variáció</h3>
@@ -126,8 +127,8 @@
         <ul>
             <li th:each="drink : ${recommendedDrinks1}">
                 <span th:text="${drink.name}"></span> -
-                <span th:text="${drink.price}">Price</span> HUF -
-                <span th:text="${drink.alcoholContent}">Alcohol Content</span>%
+                <span th:text="${drink.price % 1 == 0 ? drink.price.intValue() : drink.price}">Price</span> HUF -
+                <span th:text="${drink.alcoholContent % 1 == 0 ? drink.alcoholContent.intValue() : drink.alcoholContent}">Alcohol Content</span>%
             </li>
         </ul>
     </div>
@@ -142,8 +143,8 @@
         <ul>
             <li th:each="drink : ${recommendedDrinks2}">
                 <span th:text="${drink.name}"></span> -
-                <span th:text="${drink.price}">Price</span> HUF -
-                <span th:text="${drink.alcoholContent}">Alcohol Content</span>%
+                <span th:text="${drink.price % 1 == 0 ? drink.price.intValue() : drink.price}">Price</span> HUF -
+                <span th:text="${drink.alcoholContent % 1 == 0 ? drink.alcoholContent.intValue() : drink.alcoholContent}">Alcohol Content</span>%
             </li>
         </ul>
     </div>
@@ -158,18 +159,21 @@
         <ul>
             <li th:each="drink : ${recommendedDrinks3}">
                 <span th:text="${drink.name}"></span> -
-                <span th:text="${drink.price}">Price</span> HUF -
-                <span th:text="${drink.alcoholContent}">Alcohol Content</span>%
+                <span th:text="${drink.price % 1 == 0 ? drink.price.intValue() : drink.price}">Price</span> HUF -
+                <span th:text="${drink.alcoholContent % 1 == 0 ? drink.alcoholContent.intValue() : drink.alcoholContent}">Alcohol Content</span>%
             </li>
         </ul>
     </div>
 </div>
-<a th:href="@{/list/drinklist}">Nézd meg az ital lapot.</a>
-<p th:if="${!isLoggedIn}">
-    <a th:href="@{/login}">Jelentkezz be</a>, hogy elérd a kedvenceidet!
-</p>
-<p th:if="${isLoggedIn}">
-    <a th:href="@{/user/drink-packages}">Itt elérheted a kedvenceid!</a>
+
+<p style="font-weight: bold">Az ital lista megtekintéséhez <a class="egybe" th:href="@{/list/drinklist}">kattints ide!</a></p>
+<p style="font-weight: bold" th:if="${!isLoggedIn}">
+<!--<p>Ha még nem regisztráltál <a href="/register">kattints ide!</a></p>-->
+    A kedvenc csomagjaid elmentéséhez <a th:href="@{/login}"> jelentkezz be!</a>
+
+<p style="font-weight: bold" th:if="${isLoggedIn}">
+A kedvenceid megtekintéséhez <a class="egybe" th:href="@{/user/drink-packages}">kattints ide!</a>
+
 </p>
 
 <footer>
