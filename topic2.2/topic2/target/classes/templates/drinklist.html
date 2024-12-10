@@ -12,6 +12,7 @@
             padding: 0;
             color: #f5f5f5;
         }
+
         header {
             display: flex;
             justify-content: space-between;
@@ -21,9 +22,7 @@
             padding: 15px 30px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
-        /*header img {*/
-        /*    height: 60px;*/
-        /*}*/
+
         header button {
             background-color: #262640;
             color: white;
@@ -34,56 +33,89 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
+
         header button:hover {
             background-color: #171b2c;
         }
-        h1, h2 {
+
+        .content-container {
+            width: 80%; /* Az oldal szélessége */
+            margin: 0 auto; /* Középre helyezés */
+            padding-top: 20px;
+        }
+
+        h2 {
             text-align: center;
-            margin: 20px;
+            margin: 20px 0 30px 0; /* Távolság a táblázatok előtt */
             color: #ff6f3c;
         }
+
         .drink-category {
-            width: 80%;
-            margin: 20px auto;
             background-color: #262640;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             border-radius: 10px;
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 20px; /* Távolság a kategóriák között */
         }
+
         .drink-category:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
         }
+
         .drink-category-header {
             background-color: #ff4e00;
             color: white;
             padding: 15px;
-            font-size: 18px;
+            font-size: 1.5rem;
             font-weight: bold;
+            text-align: center;
         }
+
         .drink-list {
+            width: 100%; /* A táblázat teljes szélessége */
+            margin: 0 auto; /* Középre helyezés */
             padding: 15px;
+            font-size: 1.5rem;
         }
+
         .drink-list-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px 0;
             border-bottom: 1px solid #3a3a58;
-            font-size: 1.5rem;
         }
+
         .drink-list-row:last-child {
             border-bottom: none;
         }
-        .drink-name {
-            /*font-size: 16px;*/
-            color: #f5f5f5;
+
+        .left-align {
+            text-align: left;
         }
-        .drink-info {
-            /*font-size: 14px;*/
-            color: #c2c2d6;
+
+        .center-align {
+            text-align: center;
         }
+
+        .right-align {
+            text-align: right;
+        }
+        .drink-list th, 
+.drink-list td {
+    width: 33.33%; /* Az oszlopok egyenlő szélességűek */
+    text-align: center; /* Szövegek középre igazítása */
+    vertical-align: middle; /* Függőleges középre igazítás */
+    padding: 10px; /* Távolság a szöveg körül */
+    border-bottom: 1px solid #3a3a58; /* Alsó szegély */
+}
+
+.drink-list tbody tr:last-child td {
+    border-bottom: none; /* Az utolsó sor alsó szegélyének eltávolítása */
+}
+
         footer {
             text-align: center;
             padding: 15px;
@@ -92,61 +124,93 @@
             margin-top: auto;
             border-top: 5px solid #ff4e00;
         }
+
         @media (max-width: 600px) {
             .drink-list-row {
                 flex-direction: column;
                 align-items: flex-start;
             }
         }
+        h1 {
+            text-align: center;
+            margin: 20px;
+            color: #ff6f3c;
+        }
     </style>
 </head>
 <body>
 <header>
     <img src="/images/IbolyAppLogo.png" alt="IbolyApp Logo" />
-<!--    <form action="recommendForm.html" method="get">-->
-<!--        <button type="submit">Vissza</button>-->
-<!--    </form>-->
     <a href="/recommend/recommendForm"><button type="submit">Vissza</button></a>
 </header>
 
-<h2>Elérhető italok:</h2>
+<div class="content-container">
+    <h1>Elérhető italok:</h1>
 
-<div class="drink-category">
-    <div class="drink-category-header">Sör/Cider</div>
-    <div class="drink-list">
-        <th:block th:each="drink: ${beerCider}">
-            <div class="drink-list-row">
-                <span class="drink-name" th:text="${drink.name}">Név</span>
-                <span class="drink-info">Alkoholtartalom: <span th:text="${drink.alcoholContent + ' %'}"></span></span>
-                <span class="drink-info">Ár: <span th:text="${drink.price + ' HUF'}"></span></span>
-            </div>
-        </th:block>
+    <div class="drink-category">
+        <div class="drink-category-header">Sör/Cider</div>
+        <table class="drink-list">
+            <thead>
+                <tr>
+                    <th class="left-align">Neve</th>
+                    <th class="center-align">Alkoholtartalom</th>
+                    <th class="right-align">Ár</th>
+                </tr>
+            </thead>
+            <tbody>
+                <th:block th:each="drink: ${beerCider}">
+                    <tr>
+                        <td class="left-align" th:text="${drink.name}">Név</td>
+                        <td class="center-align" th:text="${drink.alcoholContent % 1 == 0 ? drink.alcoholContent.intValue() + ' %' : drink.alcoholContent + ' %'}">Alkoholtartalom</td>
+                        <td class="right-align" th:text="${drink.price % 1 == 0 ? drink.price.intValue() + ' HUF' : drink.price + ' HUF'}">Ár</td>
+                    </tr>
+                </th:block>
+            </tbody>
+        </table>
     </div>
-</div>
 
-<div class="drink-category">
-    <div class="drink-category-header">Hosszú Italok</div>
-    <div class="drink-list">
-        <th:block th:each="drink: ${cocktails}">
-            <div class="drink-list-row">
-                <span class="drink-name" th:text="${drink.name}">Név</span>
-                <span class="drink-info">Alkoholtartalom: <span th:text="${drink.alcoholContent + ' %'}"></span></span>
-                <span class="drink-info">Ár: <span th:text="${drink.price + ' HUF'}"></span></span>
-            </div>
-        </th:block>
+    <div class="drink-category">
+        <div class="drink-category-header">Hosszú Italok</div>
+        <table class="drink-list">
+            <thead>
+                <tr>
+                    <th class="left-align">Név</th>
+                    <th class="center-align">Alkoholtartalom</th>
+                    <th class="right-align">Ár</th>
+                </tr>
+            </thead>
+            <tbody>
+                <th:block th:each="drink: ${cocktails}">
+                    <tr>
+                        <td class="left-align" th:text="${drink.name}">Név</td>
+                        <td class="center-align" th:text="${drink.alcoholContent % 1 == 0 ? drink.alcoholContent.intValue() + ' %' : drink.alcoholContent + ' %'}">Alkoholtartalom</td>
+                        <td class="right-align" th:text="${drink.price % 1 == 0 ? drink.price.intValue() + ' HUF' : drink.price + ' HUF'}">Ár</td>
+                    </tr>
+                </th:block>
+            </tbody>
+        </table>
     </div>
-</div>
 
-<div class="drink-category">
-    <div class="drink-category-header">Likőr</div>
-    <div class="drink-list">
-        <th:block th:each="drink: ${liquors}">
-            <div class="drink-list-row">
-                <span class="drink-name" th:text="${drink.name}">Név</span>
-                <span class="drink-info">Alkoholtartalom: <span th:text="${drink.alcoholContent + ' %'}"></span></span>
-                <span class="drink-info">Ár: <span th:text="${drink.price + ' HUF'}"></span></span>
-            </div>
-        </th:block>
+    <div class="drink-category">
+        <div class="drink-category-header">Likőr</div>
+        <table class="drink-list">
+            <thead>
+                <tr>
+                    <th class="left-align">Név</th>
+                    <th class="center-align">Alkoholtartalom</th>
+                    <th class="right-align">Ár</th>
+                </tr>
+            </thead>
+            <tbody>
+                <th:block th:each="drink: ${liquors}">
+                    <tr>
+                        <td class="left-align" th:text="${drink.name}">Név</td>
+                        <td class="center-align" th:text="${drink.alcoholContent % 1 == 0 ? drink.alcoholContent.intValue() + ' %' : drink.alcoholContent + ' %'}">Alkoholtartalom</td>
+                        <td class="right-align" th:text="${drink.price % 1 == 0 ? drink.price.intValue() + ' HUF' : drink.price + ' HUF'}">Ár</td>
+                    </tr>
+                </th:block>
+            </tbody>
+        </table>
     </div>
 </div>
 

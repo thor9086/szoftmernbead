@@ -4,26 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82f5b75d-de17-4197-aa35-c3559d63e45d" name="Changes" comment="Git még mindig fos.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="82f5b75d-de17-4197-aa35-c3559d63e45d" name="Changes" comment="Debug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/drinklist.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/drinklist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/favourite.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/favourite.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/recommendForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/recommendForm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/recommendResult.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/templates/recommendResult.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/static/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/drinklist.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/drinklist.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/favourite.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/favourite.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/recommendForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/recommendForm.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/recommendResult.html" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/classes/templates/recommendResult.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/test-classes/com/example/topic2/AlcoholCalculatorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/test-classes/com/example/topic2/AlcoholCalculatorTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/test-classes/com/example/topic2/DrinkPackageServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/test-classes/com/example/topic2/DrinkPackageServiceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/test-classes/com/example/topic2/RecommendationServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/test-classes/com/example/topic2/RecommendationServiceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topic2.2/topic2/target/test-classes/com/example/topic2/UserSErviceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/topic2.2/topic2/target/test-classes/com/example/topic2/UserSErviceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,40 +89,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Topic2Application">
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="projekt" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <module name="projekt" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <method v="2" />
-    </configuration>
     <configuration name="Topic2Application" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-23" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -236,6 +191,40 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="projekt" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="projekt" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
@@ -482,7 +471,8 @@
     <MESSAGE value="Frontend, dinamikus elemek updade." />
     <MESSAGE value="Git miatt" />
     <MESSAGE value="Git még mindig fos." />
-    <option name="LAST_COMMIT_MESSAGE" value="Git még mindig fos." />
+    <MESSAGE value="Debug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Debug" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/projekt$AlcoholCalculatorTest_testAlcoholDrinkCalc.ic" NAME="AlcoholCalculatorTest.testAlcoholDrinkCalc Coverage Results" MODIFIED="1733684444804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">

@@ -73,8 +73,8 @@
                 <th:block th:each="drink : ${drinkPackage.drinks}">
                     <li>
                         <span th:text="${drink.name}"></span> -
-                        <span th:text="${drink.price}">Price</span> HUF -
-                        <span th:text="${drink.alcoholContent}">Alcohol Content</span>%
+                        <span th:text="${drink.price % 1 == 0 ? drink.price.intValue() : drink.price}">Price</span> HUF -
+                        <span th:text="${drink.alcoholContent % 1 == 0 ? drink.alcoholContent.intValue() : drink.alcoholContent}">Alcohol Content</span>%
                     </li>
                 </th:block>
             </ul>
