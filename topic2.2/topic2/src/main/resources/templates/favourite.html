@@ -51,6 +51,20 @@
             margin: 20px;
             color: #ff6f3c;
         }
+        .delete-button {
+            background-color: #ff4e00;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+        .delete-button:hover {
+            background-color: #ff6f3c;
+        }
     </style>
 
 </head>
@@ -60,7 +74,7 @@
 
     <a  th:href="@{/recommend/recommendForm}"><button type="submit">Kezdőlap</button></a>
 </header>
-<h1>Kedvencek:</h1>
+<h1>Kedvencek</h1>
 
     <ul>
         <div class="card-container">
@@ -78,6 +92,10 @@
                     </li>
                 </th:block>
             </ul>
+            <form class="delete-form" th:action="@{/favourite/remove}" method="post">
+                <input type="hidden" th:value="${drinkPackage.id}" name="packageId" />
+                <button type="button" class="delete-button">Törlés</button>
+            </form>
                 </div>
 
         </th:block>
@@ -85,8 +103,40 @@
     </ul>
 
 <footer>
-    <p>&copy; 2024 IbolyaRémei. Minden jog fenntartva.</p>
+    <p>&copy; 2024 IbolyaRémei - Minden jog fenntartva.</p>
 </footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const deleteButtons = document.querySelectorAll(".delete-button");
 
+        deleteButtons.forEach(button => {
+            button.addEventListener("click", function(event) {
+                event.preventDefault();
+                if (confirm("Biztosan törölni szeretné ezt a csomagot a kedvencek közül?")) {
+                    const form = this.closest(".delete-form");
+                    const packageId = form.querySelector("input[name='packageId']").value;
+
+                    fetch("/favourite/remove", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/x-www-form-urlencoded"
+                        },
+                        body: `packageId=${packageId}`
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            form.closest(".card").remove();
+                            alert("Eltávolítva a kedvencekből!");
+                        } else {
+                            alert("Hiba, nem sikerült a törlés!");
+                        }
+                    })
+                    .catch(error => console.error("Error:", error));
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>
